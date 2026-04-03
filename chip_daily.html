@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半导体 & AI 芯片日报 — 2026年3月22日</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: #f5f0e8;
+    color: #1a1a1a;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #111;
+    color: #f5f0e8;
+    text-align: center;
+    padding: 32px 20px 20px;
+    border-bottom: 4px solid #c8a000;
+  }
+  .header .masthead {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 12px;
+    line-height: 1;
+  }
+  .header .sub {
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-top: 8px;
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
+  .datebar {
+    background: #c8a000;
+    color: #111;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 32px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px 16px 48px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 32px 0 16px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 8px;
+  }
+  .section-title .icon { font-size: 22px; }
+  .section-title h2 {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #111;
+    text-transform: uppercase;
+  }
+  .section-title .tag {
+    background: #c8a000;
+    color: #111;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+
+  /* ── CARD GRID ── */
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 700px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .header .masthead { font-size: 32px; letter-spacing: 6px; }
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    transform: translateY(-2px);
+  }
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    flex-shrink: 0;
+  }
+  .card-body {
+    padding: 14px 16px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a000;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #111;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .card-source { font-size: 11px; color: #999; }
+  .card-link {
+    font-size: 11px;
+    font-weight: 700;
+    color: #c8a000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── HEADLINE CARD (full width) ── */
+  .card-hero {
+    background: #111;
+    border: none;
+    color: #f5f0e8;
+  }
+  .card-hero a { color: #f5f0e8; }
+  .card-hero .card-img { height: 180px; font-size: 72px; background: #1a1a2e; }
+  .card-hero .card-label { color: #c8a000; }
+  .card-hero .card-title { font-size: 20px; color: #f5f0e8; }
+  .card-hero .card-desc { color: #aaa; }
+  .card-hero .card-footer { border-top-color: #333; }
+  .card-hero .card-source { color: #666; }
+  .card-hero .card-link { color: #c8a000; }
+
+  /* ── AI SECTION ── */
+  .ai-section .card-label { color: #7b2fff; }
+  .ai-section .card-link { color: #7b2fff; }
+  .ai-section .section-title .tag { background: #7b2fff; color: #fff; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #111;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 40px;
+  }
+  .footer span { color: #c8a000; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="masthead">芯片日报</div>
+  <div class="sub">Semiconductor & AI Chip Intelligence</div>
+</div>
+<div class="datebar">
+  <span>📅 2026年3月22日 · 星期日</span>
+  <span>来源：EE Times · Reuters · 36Kr · MIT Tech Review · WSJ</span>
+</div>
+
+<div class="container">
+
+  <!-- ── 头版：重大新闻 ── -->
+  <div class="section-title">
+    <span class="icon">🔥</span>
+    <h2>头版头条</h2>
+    <span class="tag">Breaking</span>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card card-hero">
+      <a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE02d2Z1U004M1BoR2RPZHRMdTdhYWVlMlQ1b2p0cDVJS1h0bUhIbGpQYmVodjVBQ0dOUzIwMGNYVm0yT3ozU1NNSXVoalg1UXNzWnIyaHRBcm1uX0lMNWZtaGF3VEs?oc=5" target="_blank">
+        <div class="card-img">🟢</div>
+        <div class="card-body">
+          <div class="card-label">🔴 重磅 · 英伟达</div>
+          <div class="card-title">黄仁勋宣布：NVIDIA 即将发布全球首款 1.6nm 芯片，性能「前所未见」</div>
+          <div class="card-desc">台积电 1.6nm 工艺节点落地在即，黄仁勋公开表示 NVIDIA 将成为首批采用者，GB10 芯片 Die-Shot 已曝光，采用台积电 3nm 工艺量产。</div>
+          <div class="card-footer">
+            <span class="card-source">17173 / EE Times · 2026.03</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card card-hero">
+      <a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5zS2U0aWVvT2I3US0ycXlrbkdHMmxLQ3doY24wbW1hV1ZSRkY1MlkwRkIwTzhMbVpvd1RHaUpsN2hGRmRHMFZDTnp0T1Z5QmVES3Vj?oc=5" target="_blank">
+        <div class="card-img">🏭</div>
+        <div class="card-body">
+          <div class="card-label">🔴 重磅 · 台积电</div>
+          <div class="card-title">台积电：2026年晶圆代工产值年增 24.8%，先进制程价格上调</div>
+          <div class="card-desc">AI 动能持续强劲，部分制程报价浮现上涨迹象。台积电一季度资本支出超市场预期，机构全面上修存储器价格涨幅预测。</div>
+          <div class="card-footer">
+            <span class="card-source">电子工程专辑 · 2026.03.19</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ── 半导体产业 ── -->
+  <div class="section-title">
+    <span class="icon">⚙️</span>
+    <h2>半导体产业</h2>
+    <span class="tag">Industry</span>
+  </div>
+
+  <div class="grid grid-3">
+
+    <div class="card">
+      <a href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE5ZaWJOMi1zZnRZb0tLRmZjNXpqWkhxT0JNZjF0VkYyaWp5WHFpenFDY0dPT0l4aFlFTEdnc1lhQjVHMUpLdzV0Njh2ekh4V3dxcExKZ09Tbw?oc=5" target="_blank">
+        <div class="card-img" style="background:#1a2a1a;">🚀</div>
+        <div class="card-body">
+          <div class="card-label">初创 · 颠覆者</div>
+          <div class="card-title">3000万美元造出不可编程 AI 芯片，推理速度是 NVIDIA 最强 GPU 的 50 倍</div>
+          <div class="card-desc">一家初创公司用极简架构专攻推理场景，牺牲灵活性换来极致性能，引发业界对「专用芯片 vs 通用 GPU」路线之争的新一轮讨论。</div>
+          <div class="card-footer">
+            <span class="card-source">MIT Tech Review · 2026.02.21</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE40Njd3Zmc1V20zczlVS2ZtOTFQVnpHZ1ZNanNab2ZyaE40ZHVQbW1rdzRoMVJtbVVyNmg3Tmd5NkF1OTI4cHdzaV81TmMxVnE5amRhWnZPYmFJV20zb1E?oc=5" target="_blank">
+        <div class="card-img" style="background:#1a1a2a;">📦</div>
+        <div class="card-body">
+          <div class="card-label">封装 · 供应链</div>
+          <div class="card-title">先进封装2026年谁吃香？CoWoS、SoIC 争夺 AI 芯片最后一公里</div>
+          <div class="card-desc">随着 AI 芯片算力密度激增，先进封装成为瓶颈焦点。台积电 CoWoS 产能持续扩张，HBM 高带宽内存需求拉动整体供应链上行。</div>
+          <div class="card-footer">
+            <span class="card-source">澎湃新闻 · 2026.01.06</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9fbXExUVFjTkYtRkNYc2NOR2hHTTVyMjR3dDFQQ2w0OW9rbS1RTkFWc3dNa244Y0toTEpkblVVc1dITTFtam5GdV9zNzZFTW9XTWlLTG1uUmZWQjIwUkRPYUtmR1VSRnZ1UjgxbGdja1ZwcUpRQmJOOGMzZXN1WWM?oc=5" target="_blank">
+        <div class="card-img" style="background:#2a1a1a;">💾</div>
+        <div class="card-body">
+          <div class="card-label">英伟达 · 下一代</div>
+          <div class="card-title">英伟达否认下代 GPU 跳票：配备 288GB HBM4 显存，2026年如期发布</div>
+          <div class="card-desc">市场曾传言 Rubin 架构 GPU 延期，英伟达官方辟谣。HBM4 规格确认，显存带宽将大幅超越现有 H100/H200 系列。</div>
+          <div class="card-footer">
+            <span class="card-source">新浪财经 · 2025.08</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ── 地缘政治 ── -->
+  <div class="section-title">
+    <span class="icon">🌐</span>
+    <h2>地缘博弈</h2>
+    <span class="tag">Geopolitics</span>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <a href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxNcElhWkRuLUljcU5sYWRMV1ZlbndBV1RROGRpZWh2dDZtdG8xeGhsdlhYRnBPaDBLNWtKblZrRkl0eUdrSkk3WjNhZWVpZ09qWXB6MFRhTFFZT0F4OFhZRlc2MUNDZi0weUNPekhSOGl2UWh3eG5EOVV0eGY4ejljVWNZVHF5WDIxRWlibFJCelV3QkkzbGlndGNLMnp3bXJMbDdMcVltNUtTd3BlWDdtdS11U0dfcW1HNjRfRVRHcFd4S01udlpfOGdJNklVcTRaN2dENktZTUR0NFFINEM3WERyRkk5TjByX2x0VFpyYUVNZ9IB9AFBVV95cUxQalYxVWRReVBaTTlJTVBjOWdZcHdsUVJVOGpFS3pZQmxxRHBHUDRZNXhfQTVVMENqTHY4dGRXRGxITVBST3RLZEpGZmV1cXFwdUZOdXpZdXJLQ0wyanVraWwxU3BQREQtQ1VZVVdsVlB4M3M5Y0RZV1ZmU1J2Z0U2ZjlKdW0tT040VUJjeHNvWGt6dnBPM2lUWDNGOG42X1Z1NkZxZ1RGVjN6LUVZa0NWSncybWR3SGlwUzdUaFc0S3lPeHg1WU16OWo5ZXdwTU56UmFqVzMyOXFhWWxKMUVxblU3V05BcnNudklxLUtUTmdaT2hR?oc=5" target="_blank">
+        <div class="card-img" style="background:#1a1a2a; font-size:52px;">🚫</div>
+        <div class="card-body">
+          <div class="card-label">出口管制 · 美国</div>
+          <div class="card-title">两党议员推出《停止窃取我们的芯片法案》，打击 AI 芯片走私至中国</div>
+          <div class="card-desc">法案要求所有美国高性能 AI 芯片强制内置定位追踪功能，防止通过第三方绕道流入中国。这是继《芯片法案》后又一重磅半导体立法动向。</div>
+          <div class="card-footer">
+            <span class="card-source">美国之音 · 2025.12</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTFB0WndUM1E2UFktRHBsRjFnV3Y0VHMxV0ZETWVjbmlQNmZFbVNSdm1hSG8yRFgtUXpPakE0bjE1SDNSSWt3aDVGN2JTdVRWOVpl?oc=5" target="_blank">
+        <div class="card-img" style="background:#2a1a2a; font-size:52px;">🇨🇳</div>
+        <div class="card-body">
+          <div class="card-label">中国自研 · 突破</div>
+          <div class="card-title">小米、联想发布自研芯片，中美科技战升温背景下中国加速去美化</div>
+          <div class="card-desc">在出口管制持续收紧之际，中国科技巨头正加速芯片自主研发。小米、联想相继披露新款自研 SoC，国产替代步伐明显提速。</div>
+          <div class="card-footer">
+            <span class="card-source">Sohu · 2025.05</span>
+            <span class="card-link">阅读原文 →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ── AI 芯片生态 ── -->
+  <div class="ai-section">
+    <div class="section-title">
+      <span class="icon">🤖</span>
+      <h2>AI 芯片生态</h2>
+      <span class="tag">AI Ecosystem</span>
+    </div>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY2xjczV6U202ZzdHV2ozeEtMUzI5Vm1tdllVbkstd1E1aVpucW9YekJSV0Y0dVd5alNpUDNLV0ZxT3B5MW4tbHFPQldJSFFKNnZBWU10M2JENV9rVVVmVkZFcWdiWmY0bThUWlR3cVdyN3I4VDFVNjR6eEFEMGhDdGpIM0I5U1RCLWNwSFFET01vRWlieHVGNTBiY2V3d0Q4WThnWkNBQzI?oc=5" target="_blank">
+          <div class="card-img" style="background:#0a1a0a; font-size:48px;">📈</div>
+          <div class="card-body">
+            <div class="card-label">台积电 · 财报</div>
+            <div class="card-title">台积电 Q4 利润暴增 35%，AI 芯片繁荣远未结束</div>
+            <div class="card-desc">台积电创历史最高季度营收，上调 2026 年资本支出与 AI 产能扩张指引，机构预测全年营收增速超 30%。</div>
+            <div class="card-footer">
+              <span class="card-source">TIKR / 富途牛牛 · 2026.01</span>
+              <span class="card-link">阅读原文 →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE05bTBtaktMNUl3aGx3OGxacEktY01PY2dvM3ZhdnNYa19DYUxsbklLMkh5cXhMNTFFWmJzNEhHa0xFTGluMjBrNFVHZHluVjV0WWlzemxWTmw0M2NwRlRxd0VfNkFGT3pzNV90LTdB?oc=5" target="_blank">
+          <div class="card-img" style="background:#1a0a2a; font-size:48px;">🤝</div>
+          <div class="card-body">
+            <div class="card-label">OpenAI × AMD</div>
+            <div class="card-title">OpenAI 与 AMD 达成重磅算力协议，AI 热潮进入新阶段</div>
+            <div class="card-desc">OpenAI 打破对 NVIDIA 的单一依赖，与 AMD 签署大规模采购合作。MI300X 系列 GPU 将成为 ChatGPT 算力基础设施的重要补充。</div>
+            <div class="card-footer">
+              <span class="card-source">WSJ 中文 · 2025.10</span>
+              <span class="card-link">阅读原文 →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPM3kwSW5fOUQxOHhPREpUcHYyM1ctZmJDMEpNWjI2QXl6OEIzT21PT0lKWVlSLW16b1ZLUXhhdzFXN3N3Y0RvLWNwR3RwaHpNTzB5UXhabTAxazlib1hRb0E2S2s2Vks5YjhEcXlvZ213dGFSTDNRdUtOWXhCc04yS2R0T3ZVS0hzT21aZV9WRmtvalEzV0VMSQ?oc=5" target="_blank">
+          <div class="card-img" style="background:#0a0a1a; font-size:48px;">⚡</div>
+          <div class="card-body">
+            <div class="card-label">英伟达 · 新品</div>
+            <div class="card-title">英伟达提前发布更快 AI 芯片，Rubin 平台进入台积电试产阶段</div>
+            <div class="card-desc">NVIDIA 在台积电同时有 6 款新芯片流片，Rubin Ultra 规格浮出水面，发布时间线早于市场预期，竞争对手压力倍增。</div>
+            <div class="card-footer">
+              <span class="card-source">WSJ / 新浪财经 · 2026.01</span>
+              <span class="card-link">阅读原文 →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  🤖 <span>芯片日报</span> · 半导体与 AI 芯片每日参考 · 由 OpenClaw 自动生成 · 2026.03.22
+</div>
+
+</body>
+</html>
