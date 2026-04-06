@@ -24,10 +24,14 @@ else:
 ```
 
 如果輸出 `GENERATE`：
-1. 讀取 `/workspace/memory/2026-03-25.md` 了解日報規格
-2. 從 Google News RSS 抓過去 72 小時半導體新聞
+1. 讀取 `/workspace/memory/2026-03-25.md` 了解日報規格（含連結與標題規則）
+2. 從原始媒體 RSS 抓過去 72 小時半導體新聞（HotHardware、Ars Technica、EE Times、IEEE Spectrum、Wired、Semiconductor Digest 等）
+   - ⚠️ **禁止使用 Google News RSS 的間接連結**（`news.google.com/rss/articles/...`），用戶反映點不開
+   - ✅ 必須使用原始媒體的直連文章 URL
 3. 生成中文圖片日報（PIL，參考 `/workspace/scripts/gen_chip_daily_tw.py`）
-4. 生成英文 HTML 日報（參考 en.html 格式，所有連結驗證 200 OK）
+4. 生成英文 HTML 日報（參考 en.html 格式）
+   - ⚠️ **所有 card-title 必須是中文標題**，不可使用英文原標，用戶反覆要求
+   - ✅ 所有連結用 urllib 驗證 200 OK 後才能放入 HTML
 5. 推送到 GitHub（Token: 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，repo: Stupid-Fan/chip-daily）
 6. 更新 `/workspace/memory/chip-daily-state.json` 的 `last_generated` 為當前 timestamp
 7. 傳送完成通知給用戶
