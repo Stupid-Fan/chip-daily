@@ -3,267 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晶片日報 英文版 — 2026年4月10～12日</title>
+<title>晶片日報 | Chip Daily — 2026-04-15</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f0f4f8; color:#1a1a1a; }
-  .header { background:#0a1628; color:#f0f4f8; text-align:center; padding:32px 20px 20px; border-bottom:4px solid #2563eb; }
-  .header .masthead { font-size:44px; font-weight:900; letter-spacing:10px; line-height:1; }
-  .header .sub { font-size:13px; letter-spacing:3px; margin-top:8px; opacity:0.6; text-transform:uppercase; }
-  .datebar { background:#2563eb; color:#fff; display:flex; justify-content:space-between; padding:7px 32px; font-size:13px; font-weight:600; letter-spacing:1px; }
-  .container { max-width:1020px; margin:0 auto; padding:28px 16px 48px; }
-  .section-title { display:flex; align-items:center; gap:10px; margin:32px 0 16px; border-bottom:2px solid #0a1628; padding-bottom:8px; }
-  .section-title .icon { font-size:22px; }
-  .section-title h2 { font-size:18px; font-weight:800; letter-spacing:2px; color:#0a1628; }
-  .section-title .tag { background:#2563eb; color:#fff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:2px; letter-spacing:1px; }
-  .grid { display:grid; gap:16px; }
-  .grid-2 { grid-template-columns:1fr 1fr; }
-  .grid-3 { grid-template-columns:1fr 1fr 1fr; }
-  @media(max-width:700px){ .grid-2,.grid-3{ grid-template-columns:1fr; } .header .masthead{ font-size:28px; } .datebar{ flex-direction:column; gap:4px; } }
-  .card { background:#fff; border:1px solid #dce3ed; border-radius:6px; overflow:hidden; transition:box-shadow .2s,transform .2s; display:flex; flex-direction:column; }
-  .card:hover { box-shadow:0 6px 24px rgba(37,99,235,.15); transform:translateY(-2px); }
-  .card a { text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%; }
-  .card-img { width:100%; height:140px; display:flex; align-items:center; justify-content:center; font-size:52px; flex-shrink:0; background:#e8f0fe; }
-  .card-body { padding:14px 16px 16px; flex:1; display:flex; flex-direction:column; gap:6px; }
-  .card-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#2563eb; }
-  .card-title { font-size:15px; font-weight:700; line-height:1.5; color:#0a1628; }
-  .card-desc { font-size:13px; color:#555; line-height:1.65; flex:1; }
-  .card-footer { display:flex; justify-content:space-between; align-items:center; margin-top:10px; padding-top:8px; border-top:1px solid #eef2f8; }
-  .card-source { font-size:11px; color:#999; }
-  .card-link { font-size:11px; font-weight:700; color:#2563eb; letter-spacing:1px; }
-  .card-hero { background:#0a1628; border:none; color:#f0f4f8; }
-  .card-hero a { color:#f0f4f8; }
-  .card-hero .card-img { height:180px; font-size:72px; background:#0f2240; }
-  .card-hero .card-label { color:#60a5fa; }
-  .card-hero .card-title { font-size:20px; color:#f0f4f8; }
-  .card-hero .card-desc { color:#9ab3cc; }
-  .card-hero .card-footer { border-top-color:#1e3a5f; }
-  .card-hero .card-source { color:#4a6a8a; }
-  .card-hero .card-link { color:#60a5fa; }
-  .geo-section .card-label,.geo-section .card-link { color:#dc2626; }
-  .geo-section .section-title .tag { background:#dc2626; }
-  .geo-section .section-title h2 { color:#dc2626; }
-  .geo-section .section-title { border-bottom-color:#dc2626; }
-  .ai-section .card-label,.ai-section .card-link { color:#7c3aed; }
-  .ai-section .section-title .tag { background:#7c3aed; }
-  .ai-section .section-title h2 { color:#7c3aed; }
-  .ai-section .section-title { border-bottom-color:#7c3aed; }
-  .footer { background:#0a1628; color:#4a6a8a; text-align:center; padding:20px; font-size:12px; letter-spacing:1px; margin-top:40px; }
-  .footer span { color:#60a5fa; }
+  body {
+    background: #f5f0e8;
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+    color: #1a1208;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+  .masthead {
+    text-align: center;
+    border-top: 5px solid #1a1208;
+    border-bottom: 2px solid #1a1208;
+    padding: 18px 0 14px;
+    margin-bottom: 0;
+  }
+  .masthead h1 {
+    font-size: 3rem;
+    letter-spacing: 0.25em;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .masthead .sub {
+    font-size: 0.78rem;
+    color: #7a6a50;
+    letter-spacing: 0.15em;
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .datebar {
+    background: #b41414;
+    color: #fdf8ee;
+    padding: 7px 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+  .datebar .src { color: #fce6b0; }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-header {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 6px 14px;
+    margin-bottom: 0;
+    border-radius: 3px 3px 0 0;
+  }
+  .section-header.red    { background: #b41414; }
+  .section-header.blue   { background: #1e64b4; }
+  .section-header.brown  { background: #8c3c00; }
+  .section-header.gold   { background: #a07800; }
+  .cards { border: 1px solid #d8cdb8; border-top: none; border-radius: 0 0 3px 3px; }
+  .card {
+    padding: 14px 18px;
+    border-bottom: 1px solid #e8deca;
+  }
+  .card:last-child { border-bottom: none; }
+  .card-title {
+    font-size: 1.0rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    color: #1a1208;
+  }
+  .card-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card-title a:hover { text-decoration: underline; color: #b41414; }
+  .card-body {
+    font-size: 0.82rem;
+    color: #3c3728;
+    line-height: 1.65;
+    margin-bottom: 6px;
+  }
+  .card-meta {
+    font-size: 0.72rem;
+    color: #9a8060;
+    font-style: italic;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.72rem;
+    color: #9a8060;
+    border-top: 3px double #1a1208;
+    padding-top: 14px;
+    margin-top: 32px;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="masthead">晶片日報 · EN</div>
-  <div class="sub">Global Semiconductor &amp; AI Chip — English Sources Edition</div>
+<div class="masthead">
+  <h1>晶　片　日　報</h1>
+  <div class="sub">Semiconductor &amp; AI Chip Intelligence &nbsp;·&nbsp; Taiwan Edition &nbsp;·&nbsp; Powered by OpenClaw</div>
 </div>
+
 <div class="datebar">
-  <span>📅 2026年4月10日～12日 ｜ 過去72小時半導體與AI晶片新聞</span>
-  <span>來源：HotHardware · EE Times · IEEE Spectrum · Semiconductor Digest</span>
+  <span>📅 2026年4月13日～15日 &nbsp;|&nbsp; 半導體三日報</span>
+  <span class="src">Tom's Hardware · Ars Technica · IEEE Spectrum · Semiconductor Digest · EE Times</span>
 </div>
 
-<div class="container">
-
-  <!-- 頭版頭條 -->
-  <div class="section-title">
-    <span class="icon">🔥</span>
-    <h2>頭版頭條</h2>
-    <span class="tag">重磅 · 72h</span>
-  </div>
-  <div class="grid grid-2">
-
-    <div class="card card-hero">
-      <a href="https://hothardware.com/news/intel-touts-breakthrough-with-worlds-thinnest-ai-gan-chiplet" target="_blank">
-        <div class="card-img">⚡</div>
-        <div class="card-body">
-          <div class="card-label">HotHardware · Intel GaN</div>
-          <div class="card-title">Intel 宣布世界最薄 GaN Chiplet：專為 AI 晶片設計的突破性封裝技術正式亮相</div>
-          <div class="card-desc">Intel has unveiled what it claims is the world's thinnest gallium nitride (GaN) chiplet, purpose-built for next-generation AI chip power delivery and thermal optimization. The breakthrough leverages advanced heterogeneous integration packaging to drastically shrink chip footprint while boosting energy efficiency — a pivotal milestone for Intel Foundry's re-entry into cutting-edge packaging and a signal that GaN technology is moving beyond power management into the heart of AI accelerators.</div>
-          <div class="card-footer">
-            <span class="card-source">HotHardware · Apr 10, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card card-hero">
-      <a href="https://www.eetimes.com/intel-enters-pact-with-tesla-and-spacex-for-terafab/" target="_blank">
-        <div class="card-img">🤝</div>
-        <div class="card-body">
-          <div class="card-label">EE Times · TeraFab合作</div>
-          <div class="card-title">Intel 與 Tesla、SpaceX 簽署 TeraFab 製造協議：馬斯克旗下企業正式加入 Intel 晶圓代工生態</div>
-          <div class="card-desc">Intel has formally entered a manufacturing pact with Tesla and SpaceX under the TeraFab initiative, bringing Elon Musk's companies into its US foundry ecosystem. The deal is seen as a major vote of confidence in Intel's domestic fabrication strategy, reinforcing the "America First" chip manufacturing narrative while simultaneously raising questions about how Musk's political influence may shape the terms and future of Intel Foundry Services.</div>
-          <div class="card-footer">
-            <span class="card-source">EE Times · Apr 9, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-
-  <!-- 產業動態 -->
-  <div class="section-title">
-    <span class="icon">🏭</span>
-    <h2>產業動態</h2>
-    <span class="tag">半導體 · 72h</span>
-  </div>
-  <div class="grid grid-3">
-
+<!-- 頭版頭條 -->
+<div class="section">
+  <div class="section-header red">🔴 頭版頭條</div>
+  <div class="cards">
     <div class="card">
-      <a href="https://www.semiconductor-digest.com/snap-and-qualcomm-expand-strategic-collaboration/" target="_blank">
-        <div class="card-img">🕶️</div>
-        <div class="card-body">
-          <div class="card-label">Semiconductor Digest · Snap+Qualcomm</div>
-          <div class="card-title">Snap 與高通擴大戰略合作：AR 眼鏡聚焦穿戴式 AI 晶片深度整合</div>
-          <div class="card-desc">Snap and Qualcomm have announced an expanded strategic collaboration centered on next-generation AR glasses and wearable AI chip integration. The partnership deepens Snapdragon platform customizations to enhance AI inference performance and battery life in XR devices, signaling a maturing AR ecosystem where chip-software co-design becomes the key competitive differentiator.</div>
-          <div class="card-footer">
-            <span class="card-source">Semiconductor Digest · Apr 10, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
+      <div class="card-title">
+        <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-demonstrates-first-sample-of-tesla-ai5-processor-accidentally-thanks-tsc-rather-than-tsmc-claims-40x-performance-boost-over-the-predecessor" target="_blank">
+          特斯拉 AI5 處理器首度亮相：馬斯克稱效能比前代提升 40 倍，台積電代工
+        </a>
+      </div>
+      <div class="card-body">馬斯克親自展示特斯拉首款 AI5 處理器樣品，宣稱與前代相比效能提升 40 倍，並在現場不慎將「TSMC」說成「TSC」引發話題。AI5 將成為特斯拉下一代自駕與機器人系統的核心算力來源，凸顯台積電先進封裝需求持續攀升。</div>
+      <div class="card-meta">▸ Tom's Hardware · 4/15/2026</div>
     </div>
-
     <div class="card">
-      <a href="https://www.semiconductor-digest.com/hanmi-semiconductor-to-launch-second-generation-hybrid-bonder-by-end-of-2026/" target="_blank">
-        <div class="card-img">🔩</div>
-        <div class="card-body">
-          <div class="card-label">Semiconductor Digest · HANMI封裝</div>
-          <div class="card-title">韓國 HANMI 半導體宣布 2026 年底推出第二代混合鍵合設備：先進封裝競爭再升級</div>
-          <div class="card-desc">South Korea's HANMI Semiconductor has officially announced the launch of its second-generation hybrid bonding equipment by end-2026. The next-gen system delivers improved bonding accuracy and throughput, enhancing support for HBM4 and next-generation 2.5D/3D advanced packaging — directly challenging European equipment leaders like Besi in the hotly contested advanced packaging equipment market.</div>
-          <div class="card-footer">
-            <span class="card-source">Semiconductor Digest · Apr 10, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
+      <div class="card-title">
+        <a href="https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/" target="_blank">
+          新型 Rowhammer 攻擊可完全掌控搭載 Nvidia GPU 的伺服器
+        </a>
+      </div>
+      <div class="card-body">研究人員發現全新 Rowhammer 記憶體攻擊手法，可在搭載 Nvidia GPU 的機器上取得完整控制權。此漏洞波及資料中心級 GPU，Nvidia 已被通報並著手回應，引發業界對 AI 伺服器安全防護的高度關注。</div>
+      <div class="card-meta">▸ Ars Technica · 4/14/2026</div>
     </div>
-
-    <div class="card">
-      <a href="https://hothardware.com/news/intel-arc-pro-b70-battlematrix-720w" target="_blank">
-        <div class="card-img">🖥️</div>
-        <div class="card-body">
-          <div class="card-label">HotHardware · Intel GPU</div>
-          <div class="card-title">四張 Intel Arc Pro B70 Battlemage GPU 四卡陣列吸 720W：鎖定重型 AI 推論工作負載</div>
-          <div class="card-desc">A quad-card array of Intel Arc Pro B70 Battlemage GPUs draws a combined 720 watts, positioning the configuration squarely at heavy AI inference workloads. The setup showcases Intel's push into the professional AI accelerator market with its Battlemage architecture, offering an alternative to Nvidia's dominant enterprise GPU lineup at potentially more competitive price points.</div>
-          <div class="card-footer">
-            <span class="card-source">HotHardware · Apr 9, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
   </div>
-
-  <!-- 地緣博弈 -->
-  <div class="geo-section">
-  <div class="section-title">
-    <span class="icon">🌏</span>
-    <h2>地緣博弈</h2>
-    <span class="tag">安全 · 72h</span>
-  </div>
-  <div class="grid grid-2">
-
-    <div class="card">
-      <a href="https://www.semiconductor-digest.com/reshore-semiconductor-manufacturing-to-uk-and-us-to-meet-sustainability-goals/" target="_blank">
-        <div class="card-img">🌿</div>
-        <div class="card-body">
-          <div class="card-label">Semiconductor Digest · 製造回流</div>
-          <div class="card-title">半導體製造回流英美符合永續發展目標：近岸製造兼顧供應鏈安全與碳排放優化</div>
-          <div class="card-desc">A new industry analysis argues that reshoring semiconductor manufacturing to the UK and US aligns closely with sustainability goals, not just supply chain security. Localized production reduces long-haul logistics carbon footprints compared to Asia-concentrated manufacturing, making nearshore fab investment attractive to ESG-conscious tech giants increasingly scrutinizing their Scope 3 emissions from chip procurement.</div>
-          <div class="card-footer">
-            <span class="card-source">Semiconductor Digest · Apr 10, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="https://www.semiconductor-digest.com/semi-reports-global-semiconductor-equipment-billings-reached-135-billion-in-2025/" target="_blank">
-        <div class="card-img">📊</div>
-        <div class="card-body">
-          <div class="card-label">Semiconductor Digest · SEMI設備</div>
-          <div class="card-title">SEMI 報告：2025 年全球半導體設備出貨額達 1350 億美元歷史新高</div>
-          <div class="card-desc">SEMI's latest report confirms global semiconductor equipment billings reached a record $135 billion in 2025, driven by surging AI chip capacity expansion. Front-end equipment procurement surged as TSMC, Samsung, and Intel ramped capital expenditures. Analysts broadly expect the 2026 equipment market to sustain strong growth momentum as AI infrastructure buildout intensifies worldwide.</div>
-          <div class="card-footer">
-            <span class="card-source">Semiconductor Digest · Apr 8, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-  </div>
-
-  <!-- AI晶片生態 -->
-  <div class="ai-section">
-  <div class="section-title">
-    <span class="icon">🤖</span>
-    <h2>AI晶片生態</h2>
-    <span class="tag">技術 · 72h</span>
-  </div>
-  <div class="grid grid-3">
-
-    <div class="card">
-      <a href="https://www.semiconductor-digest.com/siemens-accelerates-ai-chip-verification-to-trillion-cycle-scale-with-nvidia-technology/" target="_blank">
-        <div class="card-img">🔬</div>
-        <div class="card-body">
-          <div class="card-label">Semiconductor Digest · EDA驗證</div>
-          <div class="card-title">Siemens 攜手 NVIDIA 將 AI 晶片驗證加速至兆週期規模：EDA 驗證效率躍升新紀元</div>
-          <div class="card-desc">Siemens EDA has integrated NVIDIA accelerated computing to scale AI chip design verification to trillion-cycle levels, dramatically compressing the time from complex SoC design to tape-out. The collaboration marks a structural shift in EDA tooling toward GPU-accelerated verification, with profound implications for AI chip design cycle times and engineering productivity across the semiconductor industry.</div>
-          <div class="card-footer">
-            <span class="card-source">Semiconductor Digest · Apr 9, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="https://hothardware.com/news/nvidia-n1-laptop-motherboard-leaks" target="_blank">
-        <div class="card-img">💡</div>
-        <div class="card-body">
-          <div class="card-label">HotHardware · NVIDIA N1</div>
-          <div class="card-title">NVIDIA N1 筆電主板外洩：128GB RAM 等多項頂規配置曝光，ARM 架構 PC 野心昭然若揭</div>
-          <div class="card-desc">High-resolution images of what appears to be an NVIDIA N1 ARM SoC laptop motherboard have leaked, revealing 128 GB of LPDDR5X memory and a high-specification VRM power design far exceeding current consumer laptop norms. The leak reignites market anticipation for NVIDIA's ARM-based PC platform ambitions and suggests a direct assault on Intel and AMD's laptop segment building on its AI inference dominance.</div>
-          <div class="card-footer">
-            <span class="card-source">HotHardware · Apr 9, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="https://www.eetimes.com/the-magic-of-agentic-ai-will-come-from-a-holistic-approach-to-chip-design/" target="_blank">
-        <div class="card-img">🧠</div>
-        <div class="card-body">
-          <div class="card-label">EE Times · Agentic AI設計</div>
-          <div class="card-title">Agentic AI 的魔力在於晶片設計整體方法論：EE Times 深度剖析設計自動化新趨勢</div>
-          <div class="card-desc">EE Times argues that the true transformative potential of agentic AI in semiconductors lies not in replacing individual EDA tools, but in reshaping the entire chip design methodology. From spec writing and RTL generation to physical verification, AI agents are permeating every stage of the design flow — accelerating the collapse of traditional EDA tool silos and potentially compressing design cycles from years to months.</div>
-          <div class="card-footer">
-            <span class="card-source">EE Times · Apr 10, 2026</span>
-            <span class="card-link">閱讀全文 →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-  </div>
-
 </div>
 
-<div class="footer">
-  🤖 晶片日報 EN &nbsp;·&nbsp; 半導體與AI晶片情報 &nbsp;·&nbsp; <span>由 OpenClaw 自動生成</span> &nbsp;·&nbsp; 2026-04-12 &nbsp;·&nbsp; 所有連結均已驗證可正常訪問
+<!-- 記憶體戰場 -->
+<div class="section">
+  <div class="section-header blue">💾 記憶體戰場</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">
+        <a href="https://spectrum.ieee.org/high-bandwidth-memory-shortage" target="_blank">
+          AI 需求無底洞：HBM 短缺持續加劇，IEEE Spectrum 深度解析
+        </a>
+      </div>
+      <div class="card-body">IEEE Spectrum 最新分析指出，AI 模型對高頻寬記憶體（HBM）的胃口遠超產能成長速度。SK Hynix、三星、美光三強雖持續擴產，但 AI 訓練集群的規模每年翻倍，HBM 供不應求的局面短期難以緩解。</div>
+      <div class="card-meta">▸ IEEE Spectrum · 4/13/2026</div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.tomshardware.com/pc-components/storage/memory-cards-and-flash-drives-prices-rocket-124-percent-some-products-peak-at-261-percent-jump-increases-from-2025-driven-by-ai-chip-shortage-across-a-range-of-formats-and-capacities" target="_blank">
+          AI 晶片短缺連鎖效應：記憶卡與隨身碟價格最高暴漲 261%
+        </a>
+      </div>
+      <div class="card-body">自 2025 年以來，消費性記憶卡與隨身碟均價飆漲 124%，部分高容量型號漲幅更達 261%。根本原因是 NAND 快閃記憶體產能遭 AI 晶片需求排擠，消費端供應持續受壓，短期內難有緩解跡象。</div>
+      <div class="card-meta">▸ Tom's Hardware · 4/14/2026</div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.semiconductor-digest.com/industry-wide-memory-constraints-grow-as-ai-driven-supply-shift-reshapes-market/" target="_blank">
+          AI 驅動供需重組：全行業記憶體供應緊張持續惡化
+        </a>
+      </div>
+      <div class="card-body">AI 加速器對記憶體的龐大需求正從根本上重塑整個半導體記憶體市場結構，傳統 DRAM 與 NAND 的供需邏輯被打破，廠商被迫重新分配產能優先序，HBM 與高階 DRAM 取得明顯資源傾斜。</div>
+      <div class="card-meta">▸ Semiconductor Digest · 4/15/2026</div>
+    </div>
+  </div>
 </div>
+
+<!-- 地緣博弈 -->
+<div class="section">
+  <div class="section-header brown">🌏 地緣博弈</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.tomshardware.com/tech-industry/semiconductors/ymtcs-third-wuhan-fab-clears-beijings-50-percent-domestic-tooling-threshold-as-two-more-are-planned" target="_blank">
+          中國長江存儲武漢三廠突破 50% 國產設備門檻，再增兩座新廠
+        </a>
+      </div>
+      <div class="card-body">長江存儲（YMTC）武漢第三座晶圓廠已達成北京要求的 50% 本土設備使用率門檻，並規劃再興建兩座新廠。此舉標誌中國在高階 3D NAND 製造自主化上取得關鍵里程碑，意在降低對美國及日本設備商的依賴，出口管制壓力下的自力更生戰略持續推進。</div>
+      <div class="card-meta">▸ Tom's Hardware · 4/14/2026</div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.semiconductor-digest.com/rapidus-opens-analysis-center-and-rapidus-chiplet-solutions/" target="_blank">
+          日本 Rapidus 開設晶片分析中心，同步推出 Chiplet 解決方案
+        </a>
+      </div>
+      <div class="card-body">日本國家隊晶片廠 Rapidus 宣布開設先進製程分析中心，並同步推出面向客戶的 Chiplet 整合解決方案，顯示 Rapidus 正積極建構完整生態體系，為 2027 年 2nm 量產目標布局。日本半導體復興戰略持續加速推進。</div>
+      <div class="card-meta">▸ Semiconductor Digest · 4/15/2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- AI 晶片生態 -->
+<div class="section">
+  <div class="section-header gold">🏭 AI 晶片生態</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-releases-ising-open-ai-models" target="_blank">
+          Nvidia 發布量子運算開源 AI 模型 Ising：速度快 2.5 倍、精度高 3 倍
+        </a>
+      </div>
+      <div class="card-body">Nvidia 宣布推出專為量子運算任務設計的開源 AI 模型系列「Ising」，據稱在量子錯誤解碼任務上比現有工具快 2.5 倍、精確度高 3 倍。Nvidia 持續擴大 AI 版圖，從 GPU 延伸至量子計算應用層，進一步鞏固其 AI 基礎設施生態優勢。</div>
+      <div class="card-meta">▸ Tom's Hardware · 4/14/2026</div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.semiconductor-digest.com/lighting-the-path-for-ai-co-packaged-optics-moves-from-promise-to-production/" target="_blank">
+          共封裝光學（CPO）從概念走向量產：AI 資料中心互連迎來革命
+        </a>
+      </div>
+      <div class="card-body">共封裝光學技術正快速從實驗室走向商業量產，可大幅降低 AI 資料中心內晶片間傳輸的能耗與延遲。多家封裝廠與光學模組商加速布局，預計 2026-2027 年成為新世代 AI 伺服器標配，對台灣封裝業者帶來新機遇。</div>
+      <div class="card-meta">▸ Semiconductor Digest · 4/15/2026</div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <a href="https://www.eetimes.com/sambanova-teams-up-with-intel-on-disaggregated-inference/" target="_blank">
+          SambaNova 攜手 Intel 共同推進分散式 AI 推理架構
+        </a>
+      </div>
+      <div class="card-body">AI 推理晶片新創 SambaNova 宣布與 Intel 合作，共同開發分散式（Disaggregated）推理架構，讓大型語言模型推理工作負載可跨多節點高效分配，有望降低企業部署大型 AI 模型的硬體門檻，對 Intel 而言亦是重建 AI 生態影響力的重要一步。</div>
+      <div class="card-meta">▸ EE Times · 4/14/2026</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  🤖 晶片日報 &nbsp;·&nbsp; 半導體與AI晶片情報 &nbsp;·&nbsp; 由 OpenClaw 自動生成 &nbsp;·&nbsp; 2026-04-15<br>
+  <a href="https://stupid-fan.github.io/chip-daily/" style="color:#9a8060;">https://stupid-fan.github.io/chip-daily/</a>
+</footer>
 
 </body>
 </html>
