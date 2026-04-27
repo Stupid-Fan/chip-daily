@@ -1,240 +1,302 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晶片日報 | Chip Daily — 2026-04-19~21</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>晶片日報 — 2026年4月25日～4月27日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    background: #f5f0e8;
-    font-family: 'Georgia', 'Noto Serif TC', serif;
-    color: #1a1208;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px 48px;
+    background: #0d0f14;
+    color: #e8e0d0;
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    min-height: 100vh;
   }
+
+  /* ── Masthead ── */
   .masthead {
+    background: linear-gradient(135deg, #12151e 0%, #1a1f2e 50%, #12151e 100%);
+    border-bottom: 3px solid #b40000;
+    padding: 2.8rem 2rem 2rem;
     text-align: center;
-    border-top: 5px solid #1a1208;
-    border-bottom: 2px solid #1a1208;
-    padding: 18px 0 14px;
-    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
   }
-  .masthead h1 {
-    font-size: 3rem;
-    letter-spacing: 0.25em;
+  .masthead::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 39px, rgba(255,255,255,.03) 40px
+    );
+    pointer-events: none;
+  }
+  .masthead-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 900;
-    line-height: 1;
+    letter-spacing: .3em;
+    color: #f5f0e8;
+    text-shadow: 0 2px 20px rgba(180,0,0,.4);
+    margin-bottom: .4rem;
   }
-  .masthead .sub {
-    font-size: 0.78rem;
-    color: #7a6a50;
-    letter-spacing: 0.15em;
-    margin-top: 4px;
-    font-style: italic;
+  .masthead-sub {
+    font-size: .85rem;
+    color: #888;
+    letter-spacing: .1em;
+    margin-bottom: .8rem;
   }
-  .datebar {
-    background: #b41414;
-    color: #fdf8ee;
-    padding: 7px 18px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-  }
-  .datebar .src { color: #fce6b0; }
-  .section {
-    margin-bottom: 28px;
-  }
-  .section-header {
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  .masthead-date {
+    display: inline-block;
+    background: #b40000;
     color: #fff;
-    padding: 6px 14px;
-    margin-bottom: 0;
-    border-radius: 3px 3px 0 0;
+    padding: .3rem 1.2rem;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    border-radius: 2px;
+    margin-bottom: 1rem;
   }
-  .section-header.red    { background: #b41414; }
-  .section-header.blue   { background: #1e64b4; }
-  .section-header.brown  { background: #8c3c00; }
-  .section-header.gold   { background: #a07800; }
-  .cards { border: 1px solid #d8cdb8; border-top: none; border-radius: 0 0 3px 3px; }
-  .card {
-    padding: 14px 18px;
-    border-bottom: 1px solid #e8deca;
+  .nav-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .nav-links a {
+    color: #c8a060;
+    font-size: .85rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
   }
-  .card:last-child { border-bottom: none; }
-  .card-title {
-    font-size: 1.0rem;
+  .nav-links a:hover { border-color: #c8a060; }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── Section header ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #2a2d38;
+  }
+  .section-label {
+    font-size: 1rem;
     font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 6px;
-    color: #1a1208;
+    letter-spacing: .12em;
+    color: #c8a060;
+    text-transform: uppercase;
   }
-  .card-title a {
-    color: inherit;
+  .section-line { flex: 1; height: 1px; background: #2a2d38; }
+
+  /* ── Card grid ── */
+  .card-grid {
+    display: grid;
+    gap: 1.2rem;
+  }
+  .card-grid.two   { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+  .card-grid.three { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+  /* ── Card ── */
+  .card {
+    background: #14171f;
+    border: 1px solid #232630;
+    border-radius: 6px;
+    padding: 1.4rem 1.5rem 1.2rem;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent, #b40000);
+  }
+  .card:hover {
+    border-color: #3a3f50;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,.4);
+  }
+
+  .card-section {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    color: var(--accent, #b40000);
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f0eadc;
+    line-height: 1.5;
+    margin-bottom: .7rem;
+  }
+  .card-body {
+    font-size: .85rem;
+    color: #a09888;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .card-source {
+    font-size: .75rem;
+    color: #585460;
+    border-top: 1px solid #1e2028;
+    padding-top: .6rem;
+  }
+  .card-source a {
+    color: #c8a060;
     text-decoration: none;
   }
-  .card-title a:hover { text-decoration: underline; color: #b41414; }
-  .card-body {
-    font-size: 0.82rem;
-    color: #3c3728;
-    line-height: 1.65;
-    margin-bottom: 6px;
-  }
-  .card-meta {
-    font-size: 0.72rem;
-    color: #9a8060;
-    font-style: italic;
-  }
+  .card-source a:hover { text-decoration: underline; }
+
+  /* ── Accent colours per section ── */
+  .sec-headline  { --accent: #c82020; }
+  .sec-industry  { --accent: #c8a060; }
+  .sec-geo       { --accent: #5080d0; }
+  .sec-ai        { --accent: #40b060; }
+
+  /* ── Footer ── */
   footer {
+    background: #0a0c10;
+    border-top: 1px solid #1e2028;
     text-align: center;
-    font-size: 0.72rem;
-    color: #9a8060;
-    border-top: 3px double #1a1208;
-    padding-top: 14px;
-    margin-top: 32px;
-    font-style: italic;
+    padding: 1.5rem;
+    font-size: .78rem;
+    color: #484450;
+    letter-spacing: .05em;
   }
 </style>
 </head>
 <body>
 
-<div class="masthead">
-  <h1>晶　片　日　報</h1>
-  <div class="sub">Semiconductor &amp; AI Chip Intelligence &nbsp;·&nbsp; Taiwan Edition &nbsp;·&nbsp; Powered by OpenClaw</div>
-</div>
+<header class="masthead">
+  <div class="masthead-title">晶 片 日 報</div>
+  <div class="masthead-sub">Semiconductor &amp; AI Chip Intelligence · Taiwan Edition</div>
+  <div class="masthead-date">📅 2026年4月25日 ～ 4月27日 · 半導體三日報</div>
+  <nav class="nav-links">
+    <a href="index.html">🗞️ 中文圖片版</a>
+    <a href="chip_daily_2026_04_27.png" target="_blank">🖼️ 完整圖片</a>
+  </nav>
+</header>
 
-<div class="datebar">
-  <span>📅 2026年4月19日～21日 &nbsp;|&nbsp; 半導體三日報</span>
-  <span class="src">Tom's Hardware · EE Times · HotHardware · Ars Technica</span>
-</div>
+<div class="container">
 
-<!-- 頭版頭條 -->
-<div class="section">
-  <div class="section-header red">🔴 頭版頭條</div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.tomshardware.com/tech-industry/chinese-chip-tool-makers-posted-record-2025-revenues-while-margins-slipped" target="_blank">
-          中國晶片廠2025年創歷史盈利新高：出口管制下的國產化黑馬，利潤率卻遭削價競爭侵蝕
-        </a>
-      </div>
-      <div class="card-body">儘管美國出口管制持續施壓，中國本土晶片廠商2025年整體營收依然創下歷史新高，順利完成北京國產化替代目標。然而激烈的國內削價競爭正快速侵蝕獲利能力，與此同時美國對中設備出口同期暴跌34%，顯示制裁措施已對中國晶片供應鏈產生顯著的可量化衝擊。</div>
-      <div class="card-meta">▸ Tom's Hardware · 4/20/2026</div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.tomshardware.com/tech-industry/us-blocks-chinese-acquisition-of-dutch-led-firm-lumileds-for-the-second-time" target="_blank">
-          美國再度阻止：中國最大LED晶片廠2.39億美元收購荷蘭朗明固再遭封殺
-        </a>
-      </div>
-      <div class="card-body">美國政府以國家安全為由，第二度阻止中國最大LED晶片廠斥資2.39億美元收購荷蘭照明大廠Lumileds。CFIUS認定涉及氮化鎵（GaN）半導體技術的任何收購案均屬明確的戰略紅線，此案再次揭示美中科技脫鉤在關鍵半導體材料領域持續加固高牆。</div>
-      <div class="card-meta">▸ Tom's Hardware · 4/20/2026</div>
-    </div>
+  <!-- ── 頭版頭條 ── -->
+  <div class="section-header">
+    <span class="section-label">🔴 頭版頭條</span>
+    <span class="section-line"></span>
   </div>
-</div>
+  <div class="card-grid two">
 
-<!-- 產業動態 -->
-<div class="section">
-  <div class="section-header gold">🏭 產業動態</div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.tomshardware.com/pc-components/ddr5/new-hudimm-memory-specification-debuts-with-goal-of-lowering-prices-during-ram-shortages-a-new-cheaper-memory-standard-featuring-only-one-subchannel-per-stick-aimed-at-budget-pcs" target="_blank">
-          HUDIMM全新DDR5規格亮相：降低記憶體售價，應對RAM供應短缺的產業新解方
-        </a>
-      </div>
-      <div class="card-body">JEDEC推出全新HUDIMM（Half-Underbuffered DIMM）記憶體規格，採單子通道設計，容量與頻寬各縮減50%，目標大幅壓低DDR5成本門檻。華擎率先展示相容技術，分析師認為此舉有助緩解當前記憶體供應吃緊狀況，並可能加速消費端DDR5普及。</div>
-      <div class="card-meta">▸ Tom's Hardware · HotHardware · 4/19/2026</div>
+    <div class="card sec-headline">
+      <div class="card-section">頭版頭條</div>
+      <div class="card-title">台積電公布下世代CoWoS路線圖：2029年超大封裝整合24顆HBM5e，運算效能飆升48倍</div>
+      <div class="card-body">台積電在最新技術論壇揭示次世代CoWoS先進封裝路線圖，預計2029年可支援超過14個光罩面積的超大封裝尺寸，並可整合多達24顆HBM5e高頻寬記憶體堆疊，運算效能預計較現行方案提升高達48倍。此一路線圖彰顯台積電在AI晶片先進封裝領域的絕對主導地位，英特爾與三星短期難以匹敵，全球AI晶片供應鏈將更深度依賴台積電的封裝能力。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/tech-industry/semiconductors/tsmcs-details-next-gen-cowos-roadmap-over-14-reticle-packages-and-48x-leap-in-compute-power-expected-by-2029-massive-size-enables-24-hbm5e-stacks-and-additional-memory-bandwidth-jump" target="_blank">Tom's Hardware</a> · 2026-04-27</div>
     </div>
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.tomshardware.com/pc-components/cpus/intel-teases-wider-range-of-overclockable-cpus-for-future-platforms-vp-robert-hallock-says-budget-builders-deserve-the-same-level-of-features-as-more-well-heeled-enthusiasts" target="_blank">
-          Intel宣告平民超頻時代來臨：未來平台將擴大解鎖CPU超頻產品線
-        </a>
-      </div>
-      <div class="card-body">Intel副總裁Robert Hallock透露，未來平台將擴大可解鎖超頻CPU的產品線範圍，讓入門預算用戶同樣能享有超頻能力，有望重現Core i3-9350K、Pentium G3258等平價超頻神器的榮光。此舉被視為Intel積極強化入門段競爭力、回應社群長期「超頻平民化」訴求的重要布局。</div>
-      <div class="card-meta">▸ Tom's Hardware · HotHardware · 4/21/2026</div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.eetimes.com/accelerating-industrial-robotics-with-nvidia-jetson-everfocus-and-eyepick/" target="_blank">
-          NVIDIA Jetson加速工業機器人落地：邊緣AI推論晶片驅動自主工廠真實場景
-        </a>
-      </div>
-      <div class="card-body">EE Times報導EverFocus EAC-30N搭載NVIDIA Jetson平台，結合EyePick Maestro OS，正將工業機器人的「最後一哩路」問題從邊緣AI概念推向完全自主工廠實際運作。此案例展示AI推論晶片在製造業真實落地的可行路徑，也為AIoT晶片相關供應鏈帶來具體成長機會。</div>
-      <div class="card-meta">▸ EE Times · 4/20/2026</div>
-    </div>
-  </div>
-</div>
 
-<!-- 地緣博弈 -->
-<div class="section">
-  <div class="section-header brown">🌏 地緣博弈</div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/new-jersey-datacenter-expansion-got-usd77m-in-tax-breaks-to-create-exactly-one-permanent-job-jpmorgans-site-already-scored-usd35m-and-currently-employs-just-25-workers" target="_blank">
-          數據中心7700萬美元減稅只換一個永久職缺：AI基礎建設補貼的公益爭議
-        </a>
-      </div>
-      <div class="card-body">美國新澤西州一座數據中心擴建計畫獲7700萬美元稅務減免，結果僅承諾創造一個永久就業機會；摩根大通的鄰近設施取得3500萬美元補貼，現有正式員工也僅25人。此事在社會上引發廣泛討論，各界對AI基礎建設鉅額公共補貼的投資效益提出質疑。</div>
-      <div class="card-meta">▸ Tom's Hardware · 4/20/2026</div>
+    <div class="card sec-headline">
+      <div class="card-section">頭版頭條</div>
+      <div class="card-title">Google TPU V8首度拆分為訓練版與推理版：AI加速晶片進入功能分化新時代</div>
+      <div class="card-body">Google公開第八代TPU（張量處理器）的全新設計策略，首度將TPU分拆為訓練專用與推理專用兩款獨立晶片，分別針對大型語言模型訓練的超高頻寬需求與推理任務的低延遲要求進行深度優化。業界分析師認為，此舉宣告AI加速晶片正式進入「功能分化」時代，Google自研晶片戰略進一步成熟，將倒逼NVIDIA、AMD重新思考其通用GPU架構的競爭邊界。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/tech-industry/semiconductors/google-splits-its-tpu-into-two-chips-for-the-first-time-with-training-and-inference-variants" target="_blank">Tom's Hardware</a> · 2026-04-27</div>
     </div>
-    <div class="card">
-      <div class="card-title">
-        <a href="https://hothardware.com/news/intel-arc-g3-panther-lake-handhelds" target="_blank">
-          Intel Arc G3 Panther Lake手持裝置有望Computex 2026首亮相
-        </a>
-      </div>
-      <div class="card-body">消息指出搭載Intel Arc G3 GPU的Panther Lake系列手持遊戲機有望在2026年Computex正式亮相，標誌Intel積極進軍手持AI PC與掌機市場的戰略布局。分析師認為若效能延續Core Ultra 3路線，Panther Lake將對AMD Ryzen AI Max系列構成直接競爭壓力，手持晶片市場競爭即將再升溫。</div>
-      <div class="card-meta">▸ HotHardware · 4/21/2026</div>
-    </div>
-  </div>
-</div>
 
-<!-- AI晶片生態 -->
-<div class="section">
-  <div class="section-header blue">🤖 AI晶片生態</div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.tomshardware.com/pc-components/cpus/amd-ryzen-9-9950x3d2-review" target="_blank">
-          AMD Ryzen 9 9950X3D2旗艦評測：192MB L3快取無妥協，但要付出高昂代價
-        </a>
-      </div>
-      <div class="card-body">AMD Ryzen 9 9950X3D2搭載雙3D V-Cache CCD，L3快取容量達192MB，並調高功耗上限以榨取極致效能，被稱為「史上最獨特的CPU之一」。然而高昂售價讓其「物超所值」評比敬陪末座，適用對象主要鎖定在乎極致遊戲幀數及特殊工作站負載的高端玩家。</div>
-      <div class="card-meta">▸ Tom's Hardware · HotHardware · 4/21/2026</div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        <a href="https://www.eetimes.com/why-ai-is-redefining-the-future-of-commercial-power-infrastructure/" target="_blank">
-          AI重塑商業電力基礎建設：數據中心用電需求引爆全球能源產業新賽局
-        </a>
-      </div>
-      <div class="card-body">EE Times深度分析AI數據中心爆炸性成長對全球商業電力基礎建設的深遠衝擊，指出AI算力需求增速遠超傳統電網規劃週期。晶片廠商、電力公司與政府監管機構正面臨空前協調壓力，電力供應瓶頸已成為下一波AI擴張的最大隱患。</div>
-      <div class="card-meta">▸ EE Times · 4/20/2026</div>
-    </div>
-    <div class="card">
-      <div class="card-title">
-        <a href="https://arstechnica.com/security/2026/04/contrary-to-popular-superstition-aes-128-is-just-fine-in-a-post-quantum-world/" target="_blank">
-          後量子時代加密迷思破解：AES 128對量子電腦攻擊依然足夠安全
-        </a>
-      </div>
-      <div class="card-body">Ars Technica報導，密碼工程師Filippo Valsorda點破長期流傳的迷思：AES-128加密標準在後量子運算時代依然安全，無需強制升級至256位元版本。此議題直接關係到量子晶片與後量子密碼學的研發優先序，將影響半導體產業在安全晶片設計上的資源分配策略。</div>
-      <div class="card-meta">▸ Ars Technica · 4/21/2026</div>
-    </div>
   </div>
-</div>
+
+  <!-- ── 產業動態 ── -->
+  <div class="section-header">
+    <span class="section-label">🏭 產業動態</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="card-grid three">
+
+    <div class="card sec-industry">
+      <div class="card-section">產業動態</div>
+      <div class="card-title">英特爾Xeon 7「鑽石急流」確認延至2027年：資料中心路線圖再度受挫</div>
+      <div class="card-body">據最新消息洩露，英特爾Xeon 7系列「Diamond Rapids」伺服器CPU已確認推遲至2027年量產，繼任的「Coral Rapids」則預計2028年上市。此延誤正值英特爾積極爭取AWS、微軟等主要雲端客戶之際，對英特爾重返資料中心競爭力的時間表構成重大壓力。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/pc-components/cpus/intels-upcoming-xeon-7-diamond-rapids-server-cpus-reportedly-delayed-to-2027-next-gen-coral-rapids-lineup-lands-2028-but-can-be-accelerated-according-to-new-leak" target="_blank">Tom's Hardware</a> · 2026-04-25</div>
+    </div>
+
+    <div class="card sec-industry">
+      <div class="card-section">產業動態</div>
+      <div class="card-title">英特爾傳出售「報廢晶片」提升良率數字：CPU需求旺盛令市場接受降規產品</div>
+      <div class="card-body">據業界消息，英特爾正透過將原本應報廢或低預期的CPU晶片正式對外銷售，藉此拉高整體良率數字。分析師指出，此舉反映英特爾在製程競爭中承受的成本壓力，同時也說明AI伺服器帶動的CPU需求之旺盛，使市場願意接受規格稍低的產品以滿足供應缺口。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/pc-components/cpus/intel-reportedly-says-it-boosted-yields-by-selling-what-would-normally-be-scrap-or-low-expectation-cpus-customers-more-willing-to-accept-lesser-chips-due-to-overwhelming-cpu-demand" target="_blank">Tom's Hardware</a> · 2026-04-26</div>
+    </div>
+
+    <div class="card sec-industry">
+      <div class="card-section">產業動態</div>
+      <div class="card-title">台灣股市市值首超英國：半導體龍頭台積電成為關鍵推手</div>
+      <div class="card-body">台灣股票市場總市值首度超越英國，躋身全球第七大資本市場，儘管台灣GDP僅為英國的四分之一不到。此里程碑主要由台積電等半導體龍頭股帶動，反映全球資本市場對台灣半導體生態系長期競爭力的高度認可，也彰顯AI晶片需求持續推升台灣科技股估值的結構性力量。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/tech-industry/taiwan-stock-market-overtakes-the-uk" target="_blank">Tom's Hardware</a> · 2026-04-26</div>
+    </div>
+
+  </div>
+
+  <!-- ── 地緣博弈 ── -->
+  <div class="section-header">
+    <span class="section-label">🌏 地緣博弈</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="card-grid two">
+
+    <div class="card sec-geo">
+      <div class="card-section">地緣博弈</div>
+      <div class="card-title">DeepSeek在華為晶片上發布1.6兆參數V4模型：美國升級AI技術竊取指控</div>
+      <div class="card-body">中國AI新創DeepSeek宣布在華為昇騰晶片上成功訓練並發布1.6兆參數的V4大型語言模型，此事件發生於美國政府大幅升級對中國AI技術竊取指控的敏感時刻。美國商務部正審查進一步限制華為晶片及相關AI軟體堆疊的出口管制措施，美中科技脫鉤進程恐進一步加速。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/deepseek-launches-1-6-trillion-parameter-v4-on-huawei-chips-as-us-escalates-ai-theft-accusations" target="_blank">Tom's Hardware</a> · 2026-04-26</div>
+    </div>
+
+    <div class="card sec-geo">
+      <div class="card-section">地緣博弈</div>
+      <div class="card-title">俄中聯合研發Irtysh 32核心CPU亮相：能跑《巫師3》，但效能瓶頸仍明顯</div>
+      <div class="card-body">俄羅斯與中國聯合研發的Irtysh 32核心處理器已能以30幀以上速度運行《巫師3》，引發西方媒體廣泛關注。然而業界分析師指出，儘管規格數字亮眼，實際效能測試顯示存在嚴重CPU瓶頸，與英特爾、AMD主流處理器仍有明顯效能差距，難以支撐制裁環境下的高效能運算與AI訓練需求。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/pc-components/cpus/russian-chinese-irtysh-32-core-cpu-runs-the-witcher-3-at-30-fps-heavyweight-chip-still-imposes-cpu-bottleneck-despite-impressive-specs" target="_blank">Tom's Hardware</a> · 2026-04-27</div>
+    </div>
+
+  </div>
+
+  <!-- ── AI晶片生態 ── -->
+  <div class="section-header">
+    <span class="section-label">🤖 AI晶片生態</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="card-grid three">
+
+    <div class="card sec-ai">
+      <div class="card-section">AI晶片生態</div>
+      <div class="card-title">AMD推出EXPO 1.2記憶體規格：支援三家中國廠商，Zen 6全面解鎖效能</div>
+      <div class="card-body">AMD發布EXPO 1.2記憶體超頻規格標準，新增對三家中國記憶體廠商（包含長鑫存儲等）DDR5模組的官方支援。業界人士指出，完整效能提升須等待Zen 6架構處理器上市後方能充分發揮，顯示AMD積極布局中國本土記憶體生態系，以應對潛在的供應鏈多元化需求。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/pc-components/ram/amd-expo-1-2-is-here-but-you-may-not-notice-significant-gains-until-zen-6-upgraded-ram-overclocking-tech-will-unlock-the-next-level-of-memory-speed-on-ryzen-cpus" target="_blank">Tom's Hardware</a> · 2026-04-25</div>
+    </div>
+
+    <div class="card sec-ai">
+      <div class="card-section">AI晶片生態</div>
+      <div class="card-title">英特爾確認取消Xe3P Arc「Celestial」獨立遊戲GPU：下世代路線圖充滿不確定性</div>
+      <div class="card-body">英特爾已正式確認取消Xe3P架構的Arc「Celestial」系列獨立遊戲顯示卡，此決定令英特爾消費級GPU戰略再度蒙上陰影。即便是2027年預計登場的下下代Xe4「Druid」架構，其遊戲GPU產品線也面臨重重不確定性，英特爾在消費級GPU市場的競爭意志遭到市場廣泛質疑。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/pc-components/gpus/intel-has-reportedly-killed-discrete-gaming-gpus-for-the-upcoming-xe3p-arc-celestial-family-gaming-gpu-remains-uncertain-even-for-the-next-gen-xe4-druid-lineup-that-lands-in-2027" target="_blank">Tom's Hardware</a> · 2026-04-25</div>
+    </div>
+
+    <div class="card sec-ai">
+      <div class="card-section">AI晶片生態</div>
+      <div class="card-title">AMD Ryzen 9950X3D跌至歷史低價：雙核心X3D晶片架構引領高效能運算新標竿</div>
+      <div class="card-body">AMD Ryzen 9950X3D在亞馬遜降至歷史新低價格573.99美元，較上市價格下跌18%，同時登上銷售榜首位。配備雙X3D快取晶片堆疊的旗艦處理器，憑藉其龐大的3D V-Cache架構，在AI輔助運算與高效能遊戲應用中展現出色表現，成為消費者市場中最受矚目的高效能CPU選擇。</div>
+      <div class="card-source"><a href="https://www.tomshardware.com/pc-components/cpus/amd-ryzen-9950x3d-tops-amazon-best-sellers-as-it-falls-to-all-time-low-price-of-usd573-99-32-core-x3d-chip-is-now-18-percent-off-its-launch-price" target="_blank">Tom's Hardware</a> · 2026-04-27</div>
+    </div>
+
+  </div>
+
+</div><!-- /container -->
 
 <footer>
-  🤖 晶片日報 &nbsp;·&nbsp; 半導體與AI晶片情報 &nbsp;·&nbsp; 由 OpenClaw 自動生成 &nbsp;·&nbsp; 2026-04-21<br>
-  <a href="https://stupid-fan.github.io/chip-daily/" style="color:#9a8060;">https://stupid-fan.github.io/chip-daily/</a>
+  🤖 晶片日報 · 半導體與AI晶片情報 · 由 OpenClaw 自動生成 · 2026-04-27
 </footer>
 
 </body>
