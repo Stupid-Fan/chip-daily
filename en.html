@@ -1,153 +1,371 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chip Daily — 晶片日報 2026-04-30</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #f5f0e8; font-family: 'Georgia', 'Noto Serif CJK TC', serif; color: #1a1208; }
-  header { background: #1a1208; color: #f5f0e8; text-align: center; padding: 32px 20px 20px; }
-  header h1 { font-size: 2.8rem; letter-spacing: 0.18em; font-weight: 900; }
-  header .sub { font-size: 0.85rem; color: #c8b88a; margin-top: 6px; letter-spacing: 0.12em; }
-  header .datebar { background: #b41414; color: #fff; font-size: 0.82rem; margin-top: 14px; padding: 6px 16px; display: inline-block; border-radius: 2px; }
-  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
-  .section-title { background: #b41414; color: #fff; font-size: 0.95rem; font-weight: bold; padding: 8px 16px; margin: 28px 0 12px; letter-spacing: 0.06em; }
-  .section-title.blue { background: #1e64b4; }
-  .section-title.brown { background: #8c3c00; }
-  .section-title.gold { background: #a07800; }
-  .card { background: #fffdf6; border: 1px solid #ddd4b8; border-left: 4px solid #b41414; margin-bottom: 14px; padding: 16px 18px; }
-  .card.blue { border-left-color: #1e64b4; }
-  .card.brown { border-left-color: #8c3c00; }
-  .card.gold { border-left-color: #a07800; }
-  .card-title { font-size: 1.05rem; font-weight: bold; color: #1a1208; line-height: 1.5; margin-bottom: 8px; }
-  .card-title a { color: #1a1208; text-decoration: none; }
-  .card-title a:hover { color: #b41414; }
-  .card-body { font-size: 0.875rem; color: #3c3520; line-height: 1.7; margin-bottom: 8px; }
-  .card-source { font-size: 0.78rem; color: #967840; }
-  footer { text-align: center; padding: 24px; font-size: 0.78rem; color: #8c7850; background: #1a1208; color: #8c7850; }
-  @media (max-width: 600px) { header h1 { font-size: 1.8rem; } .card-title { font-size: 0.95rem; } }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>晶片日報 2026-05-04～06 | Chip Daily</title>
+  <style>
+    :root {
+      --bg: #faf8f2;
+      --ink: #18140e;
+      --accent: #b41414;
+      --gold: #a07800;
+      --blue: #1e64b4;
+      --brown: #8c3c00;
+      --card-bg: #fff;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --badge-bg: #f0ece0;
+      --badge-ink: #6b5c30;
+      --muted: #6b6050;
+      --rule: #d4c8a8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* ── Header ── */
+    header {
+      background: #18140e;
+      color: #faf8f2;
+      text-align: center;
+      padding: 40px 20px 28px;
+      border-bottom: 4px solid var(--accent);
+    }
+    header h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      letter-spacing: 0.25em;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    header .sub {
+      font-size: 0.82rem;
+      color: #b8a878;
+      letter-spacing: 0.08em;
+    }
+    .date-bar {
+      background: var(--accent);
+      color: #faf8f2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 32px;
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .date-bar .sources { color: #fce6b4; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px 60px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 44px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 6px 6px 0 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+    }
+    .section-header.accent  { background: var(--accent); }
+    .section-header.blue    { background: var(--blue); }
+    .section-header.brown   { background: var(--brown); }
+    .section-header.gold    { background: var(--gold); }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+      padding: 18px 0 0;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: var(--card-shadow);
+      padding: 20px 22px 16px;
+      border-top: 3px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 22px rgba(0,0,0,0.13); }
+    .card.accent-top  { border-top-color: var(--accent); }
+    .card.blue-top    { border-top-color: var(--blue); }
+    .card.brown-top   { border-top-color: var(--brown); }
+    .card.gold-top    { border-top-color: var(--gold); }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .card-title a:hover { text-decoration: underline; color: var(--accent); }
+
+    .card-body {
+      font-size: 0.875rem;
+      color: #3c3528;
+      line-height: 1.75;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-ink);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .badge.register { background: #fdeaea; color: #8c1010; }
+    .badge.semidigest { background: #e8f0fc; color: #1a4080; }
+    .badge.ieee { background: #e6f4e6; color: #1a5c1a; }
+
+    .read-more {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .read-more:hover { color: var(--accent); text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+    }
+  </style>
 </head>
 <body>
+
 <header>
-  <h1>晶 片 日 報</h1>
-  <div class="sub">Semiconductor &amp; AI Chip Intelligence &nbsp;·&nbsp; Global Edition</div>
-  <div class="datebar">📅 2026年4月28日～30日 &nbsp;·&nbsp; Tom's Hardware · EE Times · ExtremeTech · Ars Technica · IEEE Spectrum</div>
+  <h1>晶  片  日  報</h1>
+  <p class="sub">Semiconductor &amp; AI Chip Intelligence · Taiwan Edition</p>
 </header>
 
-<div class="container">
-
-  <!-- 頭版頭條 -->
-  <div class="section-title">🔴 頭版頭條</div>
-
-  <div class="card">
-    <div class="card-title">
-      <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/samsung-and-sk-hynix-warn-ai-driven-memory-shortages-could-last-until-2027-and-beyond-as-hbm-demand-explodes-customers-already-reserving-supply-years-ahead-while-the-wider-dram-market-begins-to-tighten" target="_blank">
-        三星與SK海力士警告：AI驅動HBM短缺恐持續至2027年以後
-      </a>
-    </div>
-    <div class="card-body">三星與SK海力士高層同步示警，AI訓練對高頻寬記憶體（HBM）的需求爆炸性成長，客戶已開始提前數年預訂產能，HBM供應荒恐延續至2027年甚至更久。廣泛DRAM市場也開始同步收緊，業界預期記憶體超級週期仍未到頂。</div>
-    <div class="card-source">▸ Tom's Hardware &nbsp;·&nbsp; 4/30</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">
-      <a href="https://www.tomshardware.com/tech-industry/cambricons-q1-revenue-hits-423-million-as-chinas-domestic-ai-chip-market-accelerates" target="_blank">
-        Cambricon Q1營收4.23億美元創高：中國本土AI晶片加速侵蝕輝達市占
-      </a>
-    </div>
-    <div class="card-body">中國GPU廠商寒武紀2026年第一季營收達4.23億美元，年增超過300%。中國AI晶片市場在出口管制下加速自立，國產廠商持續蠶食輝達在中國市場份額，地緣政治效應對中國半導體產業形成反向驅動力。</div>
-    <div class="card-source">▸ Tom's Hardware &nbsp;·&nbsp; 4/29</div>
-  </div>
-
-  <!-- AI晶片生態 -->
-  <div class="section-title blue">🖥️ AI晶片生態</div>
-
-  <div class="card blue">
-    <div class="card-title">
-      <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/metas-multi-billion-dollar-graviton-deal-exposes-new-bottleneck-in-ai-infrastructure" target="_blank">
-        Meta斥資數十億美元簽訂Graviton大單：AI基礎設施現CPU瓶頸新危機
-      </a>
-    </div>
-    <div class="card-body">Meta與AWS簽訂大規模Graviton CPU採購協議，突顯AI推理工作負載轉向Agentic架構後，CPU短缺已成為新的基礎設施瓶頸，業界開始重新評估AI伺服器中CPU與GPU的配比。此趨勢對Intel與AMD的資料中心CPU業務既是機遇也是挑戰。</div>
-    <div class="card-source">▸ Tom's Hardware &nbsp;·&nbsp; 4/30</div>
-  </div>
-
-  <div class="card blue">
-    <div class="card-title">
-      <a href="https://www.extremetech.com/mobile/openai-is-reportedly-planning-an-aifirst-smartphone-with-agents-instead" target="_blank">
-        OpenAI規劃2028年推AI優先智慧型手機：攜手高通與聯發科開發專用晶片
-      </a>
-    </div>
-    <div class="card-body">分析師郭明錤爆料，OpenAI正與高通及聯發科合作，為計畫中的AI原生智慧型手機開發端側AI專用處理器，預計2028年問世，以AI Agent取代傳統App架構，將對現有手機晶片生態帶來重大衝擊。</div>
-    <div class="card-source">▸ ExtremeTech / EE Times &nbsp;·&nbsp; 4/29</div>
-  </div>
-
-  <div class="card blue">
-    <div class="card-title">
-      Tenstorrent發布次世代AI伺服器：高速Token生成、無需預填分離架構
-    </div>
-    <div class="card-body">Tenstorrent推出新一代AI推理伺服器，主打超高Token生成速率，並取消預填（prefill）與解碼（decode）分離架構，大幅簡化部署複雜度，直接挑戰輝達H系列推理方案，為中小型AI廠商提供更低門檻的部署選項。</div>
-    <div class="card-source">▸ EE Times &nbsp;·&nbsp; 4/29</div>
-  </div>
-
-  <!-- 地緣博弈 -->
-  <div class="section-title brown">🌏 地緣博弈</div>
-
-  <div class="card brown">
-    <div class="card-title">
-      <a href="https://www.extremetech.com/computing/intel-is-selling-duff-cpus-to-ai-builders-as-they-scramble-for-chips" target="_blank">
-        Intel向AI建商出售「次級CPU」：晶片荒下原本報廢品重新分級銷售
-      </a>
-    </div>
-    <div class="card-body">據報導，Intel正將原本因測試不達標而準備報廢的CPU重新分級（rebinning），以較低規格出售給急需晶片的AI基礎設施建設商，折射出當前晶片嚴重短缺的市場現況，也引發業界對AI伺服器可靠性的擔憂。</div>
-    <div class="card-source">▸ ExtremeTech &nbsp;·&nbsp; 4/30</div>
-  </div>
-
-  <div class="card brown">
-    <div class="card-title">
-      受制裁中國AI巨頭商湯科技：持續研發高速影像模型，出口管制長效遭質疑
-    </div>
-    <div class="card-body">遭美國制裁的商湯科技宣布發布最新影像生成模型，主打推理速度，並聲稱模型運行於國產晶片之上。即便面臨晶片出口管制，中國頭部AI廠商仍在持續研發迭代，出口管制的長期效力再遭市場質疑。</div>
-    <div class="card-source">▸ Wired &nbsp;·&nbsp; 4/29</div>
-  </div>
-
-  <!-- 產業動態 -->
-  <div class="section-title gold">🏭 產業動態</div>
-
-  <div class="card gold">
-    <div class="card-title">
-      Athos放棄多供應商Chiplet路線：決定自主設計單一Chiplet投片
-    </div>
-    <div class="card-body">AI晶片新創Athos宣布放棄原先多供應商chiplet整合策略，轉向全自主設計單一chiplet，預計近期投片。此舉被視為提升設計一致性與安全性的重大戰略轉向，也反映初創晶片公司在供應鏈複雜度與設計控制之間的取捨難題。</div>
-    <div class="card-source">▸ EE Times &nbsp;·&nbsp; 4/29</div>
-  </div>
-
-  <div class="card gold">
-    <div class="card-title">
-      <a href="https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/" target="_blank">
-        Rowhammer新攻擊手法：輝達GPU記憶體漏洞可讓攻擊者完全掌控目標機器
-      </a>
-    </div>
-    <div class="card-body">資安研究人員揭露新型Rowhammer攻擊手法，可利用輝達GPU的記憶體漏洞取得目標機器完整控制權，對AI訓練叢集與雲端GPU租用環境構成嚴重威脅。此漏洞凸顯AI基礎設施在快速擴張中的硬體安全隱患。</div>
-    <div class="card-source">▸ Ars Technica &nbsp;·&nbsp; 4/30</div>
-  </div>
-
-  <div class="card gold">
-    <div class="card-title">
-      <a href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank">
-        IEEE里程碑認定：FPGA晶片改寫硬體可重寫歷史，影響路由器至醫療成像
-      </a>
-    </div>
-    <div class="card-body">IEEE正式將FPGA技術列為歷史性里程碑，這項讓硬體電路可在出廠後自由重寫的技術，已深刻影響網際網路路由器、無線基地台、醫療成像等關鍵電子系統長達數十年，是現代可程式化硬體生態的基石。</div>
-    <div class="card-source">▸ IEEE Spectrum &nbsp;·&nbsp; 4/29</div>
-  </div>
-
+<div class="date-bar">
+  <span>📅 2026年5月4日～6日 &nbsp;半導體三日報</span>
+  <span class="sources">The Register · Semiconductor Digest · IEEE Spectrum</span>
 </div>
 
+<main>
+
+  <!-- ── 頭版頭條 ── -->
+  <section class="section">
+    <div class="section-header accent">🔴 &nbsp;頭版頭條</div>
+    <div class="cards">
+
+      <div class="card accent-top">
+        <div class="card-title">
+          <a href="https://www.theregister.com/systems/2026/05/06/spacex-plots-119b-wafer-fab-to-make-elons-orbital-ai-dream-come-true/5231202" target="_blank" rel="noopener">
+            馬斯克擬砸1190億美元建晶圓廠：SpaceX豪賭AI晶片自主製造
+          </a>
+        </div>
+        <div class="card-body">
+          SpaceX計劃投入高達1190億美元在美國本土興建晶圓廠，目標生產Starlink及Dojo AI晶片。馬斯克從未有晶圓代工經驗，此舉震驚半導體業界，被視為對台積電、三星及英特爾代工的重大挑戰，也引發對其執行可行性的廣泛質疑。
+        </div>
+        <div class="card-footer">
+          <span class="badge register">The Register</span>
+          <a class="read-more" href="https://www.theregister.com/systems/2026/05/06/spacex-plots-119b-wafer-fab-to-make-elons-orbital-ai-dream-come-true/5231202" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card accent-top">
+        <div class="card-title">
+          <a href="https://www.theregister.com/personal-tech/2026/05/06/amd-warns-rising-memory-costs-will-hit-pc-shipments/5231063" target="_blank" rel="noopener">
+            DRAM短缺衝擊AMD全年展望：記憶體漲價拖累PC出貨預測下修
+          </a>
+        </div>
+        <div class="card-body">
+          AMD警告全球DRAM供應持續吃緊，記憶體成本大幅攀升將直接壓縮PC出貨量，全年業績展望面臨下修壓力。此消息與AI伺服器記憶體需求暴增互為呼應，HBM缺貨與DRAM漲價形成雙重壓力。
+        </div>
+        <div class="card-footer">
+          <span class="badge register">The Register</span>
+          <a class="read-more" href="https://www.theregister.com/personal-tech/2026/05/06/amd-warns-rising-memory-costs-will-hit-pc-shipments/5231063" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 記憶體 / AI晶片 ── -->
+  <section class="section">
+    <div class="section-header blue">💾 &nbsp;記憶體 / AI晶片</div>
+    <div class="cards">
+
+      <div class="card blue-top">
+        <div class="card-title">
+          <a href="https://spectrum.ieee.org/gpu-performance-comparison" target="_blank" rel="noopener">
+            GPU租用者面臨「矽片彩票」：雲端算力效能差異高達3倍
+          </a>
+        </div>
+        <div class="card-body">
+          IEEE Spectrum深度報告揭露，雲端GPU租用市場存在嚴重效能差異——同一型號GPU在不同供應商或甚至同一供應商不同時段，實際運算效能可差達3倍，AI新創公司算力成本估算因此大幅失準。
+        </div>
+        <div class="card-footer">
+          <span class="badge ieee">IEEE Spectrum</span>
+          <a class="read-more" href="https://spectrum.ieee.org/gpu-performance-comparison" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card blue-top">
+        <div class="card-title">
+          <a href="https://spectrum.ieee.org/sparse-ai" target="_blank" rel="noopener">
+            稀疏AI硬體突破：零值加速技術可望讓AI晶片功耗砍半
+          </a>
+        </div>
+        <div class="card-body">
+          IEEE Spectrum報導，新型稀疏化運算硬體架構能跳過神經網路中大量接近零的數值，在不損失精度的前提下大幅減少實際計算量，有望使下一代AI推理晶片效能提升2倍、功耗減少50%。
+        </div>
+        <div class="card-footer">
+          <span class="badge ieee">IEEE Spectrum</span>
+          <a class="read-more" href="https://spectrum.ieee.org/sparse-ai" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 地緣博弈 ── -->
+  <section class="section">
+    <div class="section-header brown">🌏 &nbsp;地緣博弈</div>
+    <div class="cards">
+
+      <div class="card brown-top">
+        <div class="card-title">
+          <a href="https://www.semiconductor-digest.com/sharp-increase-in-global-semiconductor-sales-in-q1-2026/" target="_blank" rel="noopener">
+            2026 Q1全球半導體銷售急速成長，AI需求推升市場創新高
+          </a>
+        </div>
+        <div class="card-body">
+          業界數據顯示2026年第一季全球半導體銷售金額大幅成長，AI伺服器晶片、先進記憶體及高效能運算需求持續旺盛，台灣、韓國主要晶圓廠訂單滿載，全年展望樂觀。
+        </div>
+        <div class="card-footer">
+          <span class="badge semidigest">Semiconductor Digest</span>
+          <a class="read-more" href="https://www.semiconductor-digest.com/sharp-increase-in-global-semiconductor-sales-in-q1-2026/" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card brown-top">
+        <div class="card-title">
+          <a href="https://www.semiconductor-digest.com/nvidia-and-corning-announce-long-term-partnership-to-strengthen-u-s-manufacturing-for-ai-infrastructure/" target="_blank" rel="noopener">
+            輝達與康寧攜手：光纖網路基礎設施支撐美國AI算力擴張
+          </a>
+        </div>
+        <div class="card-body">
+          輝達宣布與康寧（Corning）簽署長期戰略合作協議，共同強化美國AI資料中心光纖網路基礎設施。康寧負責供應新一代低損耗光纖，支援輝達NVLink及Infiniband高頻寬互聯，確保美國AI製造供應鏈本土化。
+        </div>
+        <div class="card-footer">
+          <span class="badge semidigest">Semiconductor Digest</span>
+          <a class="read-more" href="https://www.semiconductor-digest.com/nvidia-and-corning-announce-long-term-partnership-to-strengthen-u-s-manufacturing-for-ai-infrastructure/" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 產業動態 ── -->
+  <section class="section">
+    <div class="section-header gold">🏭 &nbsp;產業動態</div>
+    <div class="cards">
+
+      <div class="card gold-top">
+        <div class="card-title">
+          <a href="https://www.semiconductor-digest.com/siemens-hardware-assisted-verification-validates-arm-agi-cpu-for-scalable-agentic-ai/" target="_blank" rel="noopener">
+            Arm AGI CPU通過西門子硬體驗證，代理AI應用規模部署在望
+          </a>
+        </div>
+        <div class="card-body">
+          西門子EDA完成對Arm最新AGI（人工通用智慧）CPU設計的硬體輔助功能驗證，確認其可支援大規模代理AI工作負載。此次驗證被視為Arm在資料中心CPU市場挑戰x86架構的重要里程碑。
+        </div>
+        <div class="card-footer">
+          <span class="badge semidigest">Semiconductor Digest</span>
+          <a class="read-more" href="https://www.semiconductor-digest.com/siemens-hardware-assisted-verification-validates-arm-agi-cpu-for-scalable-agentic-ai/" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card gold-top">
+        <div class="card-title">
+          <a href="https://www.semiconductor-digest.com/applied-materials-broadens-advanced-packaging-portfolio-with-acquisition-of-nexx/" target="_blank" rel="noopener">
+            應用材料收購先進封裝設備商NEXX，強化CoWoS製程布局
+          </a>
+        </div>
+        <div class="card-body">
+          應用材料（Applied Materials）宣布收購NEXX System，一家專注於先進封裝電鍍設備的廠商。此舉將強化應用材料在CoWoS、SoIC等3D封裝製程的設備競爭力，直接受益於台積電與英特爾的封裝擴產計畫。
+        </div>
+        <div class="card-footer">
+          <span class="badge semidigest">Semiconductor Digest</span>
+          <a class="read-more" href="https://www.semiconductor-digest.com/applied-materials-broadens-advanced-packaging-portfolio-with-acquisition-of-nexx/" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card gold-top">
+        <div class="card-title">
+          <a href="https://www.semiconductor-digest.com/globalfoundries-accelerates-adoption-of-co-packaged-optics-for-advanced-ai-data-centers-with-scale-optical-module-solution/" target="_blank" rel="noopener">
+            GlobalFoundries推SCALE共封裝光學模組，搶進AI資料中心互聯市場
+          </a>
+        </div>
+        <div class="card-body">
+          GlobalFoundries（格芯）發表SCALE共封裝光學（CPO）模組解決方案，整合矽光子技術於AI資料中心交換器，可大幅降低高速互聯能耗。此舉標誌格芯正積極從傳統特殊製程轉型，搶攻AI基礎設施市場。
+        </div>
+        <div class="card-footer">
+          <span class="badge semidigest">Semiconductor Digest</span>
+          <a class="read-more" href="https://www.semiconductor-digest.com/globalfoundries-accelerates-adoption-of-co-packaged-optics-for-advanced-ai-data-centers-with-scale-optical-module-solution/" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card gold-top">
+        <div class="card-title">
+          <a href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank" rel="noopener">
+            FPGA晶片獲IEEE里程碑認證：可重寫硬體革命50週年紀念
+          </a>
+        </div>
+        <div class="card-body">
+          IEEE授予FPGA晶片技術里程碑獎章，紀念可重寫硬體架構問世近50週年。FPGA技術如今已廣泛應用於AI加速、5G通訊及自動駕駛，Altera（英特爾旗下）、Xilinx（AMD旗下）及Lattice等廠商持續推動技術進化。
+        </div>
+        <div class="card-footer">
+          <span class="badge ieee">IEEE Spectrum</span>
+          <a class="read-more" href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
 <footer>
-  🤖 晶片日報 &nbsp;·&nbsp; 半導體與AI晶片情報 &nbsp;·&nbsp; 由 OpenClaw 自動生成 &nbsp;·&nbsp; 2026-04-30
+  🤖 晶片日報 · 半導體與AI晶片情報 · 由 OpenClaw 自動生成 · 2026-05-06
 </footer>
+
 </body>
 </html>
