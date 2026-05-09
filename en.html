@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>晶片日報 2026-05-04～06 | Chip Daily</title>
+  <title>晶片日報 2026-05-07～09 | Chip Daily</title>
   <style>
     :root {
       --bg: #faf8f2;
@@ -144,9 +144,9 @@
       font-weight: 600;
       letter-spacing: 0.03em;
     }
-    .badge.register { background: #fdeaea; color: #8c1010; }
-    .badge.semidigest { background: #e8f0fc; color: #1a4080; }
-    .badge.ieee { background: #e6f4e6; color: #1a5c1a; }
+    .badge.wired    { background: #fdeaea; color: #8c1010; }
+    .badge.ieee     { background: #e6f4e6; color: #1a5c1a; }
+    .badge.ars      { background: #e8f0fc; color: #1a4080; }
 
     .read-more {
       font-size: 0.78rem;
@@ -173,8 +173,8 @@
 </header>
 
 <div class="date-bar">
-  <span>📅 2026年5月4日～6日 &nbsp;半導體三日報</span>
-  <span class="sources">The Register · Semiconductor Digest · IEEE Spectrum</span>
+  <span>📅 2026年5月7日～9日 &nbsp;半導體三日報</span>
+  <span class="sources">Wired · IEEE Spectrum · Ars Technica</span>
 </div>
 
 <main>
@@ -186,40 +186,40 @@
 
       <div class="card accent-top">
         <div class="card-title">
-          <a href="https://www.theregister.com/systems/2026/05/06/spacex-plots-119b-wafer-fab-to-make-elons-orbital-ai-dream-come-true/5231202" target="_blank" rel="noopener">
-            馬斯克擬砸1190億美元建晶圓廠：SpaceX豪賭AI晶片自主製造
+          <a href="https://www.wired.com/story/google-deepmind-workers-vote-to-unionize-over-military-ai-deals/" target="_blank" rel="noopener">
+            Google DeepMind員工投票組工會，反對軍事AI合約
           </a>
         </div>
         <div class="card-body">
-          SpaceX計劃投入高達1190億美元在美國本土興建晶圓廠，目標生產Starlink及Dojo AI晶片。馬斯克從未有晶圓代工經驗，此舉震驚半導體業界，被視為對台積電、三星及英特爾代工的重大挑戰，也引發對其執行可行性的廣泛質疑。
+          Google DeepMind研究員與工程師發起組工會投票，主要訴求是反對公司承接美國國防部軍事AI合約。這是科技巨頭AI部門員工首次以集體行動方式抗議AI軍事化應用，引發業界對AI倫理與勞工權益的廣泛討論。
         </div>
         <div class="card-footer">
-          <span class="badge register">The Register</span>
-          <a class="read-more" href="https://www.theregister.com/systems/2026/05/06/spacex-plots-119b-wafer-fab-to-make-elons-orbital-ai-dream-come-true/5231202" target="_blank" rel="noopener">閱讀全文 →</a>
+          <span class="badge wired">Wired</span>
+          <a class="read-more" href="https://www.wired.com/story/google-deepmind-workers-vote-to-unionize-over-military-ai-deals/" target="_blank" rel="noopener">閱讀全文 →</a>
         </div>
       </div>
 
       <div class="card accent-top">
         <div class="card-title">
-          <a href="https://www.theregister.com/personal-tech/2026/05/06/amd-warns-rising-memory-costs-will-hit-pc-shipments/5231063" target="_blank" rel="noopener">
-            DRAM短缺衝擊AMD全年展望：記憶體漲價拖累PC出貨預測下修
+          <a href="https://www.wired.com/story/anthropic-spacex-compute-deal-colossus/" target="_blank" rel="noopener">
+            Anthropic與SpaceX算力合作，AI競賽進入新奇怪局面
           </a>
         </div>
         <div class="card-body">
-          AMD警告全球DRAM供應持續吃緊，記憶體成本大幅攀升將直接壓縮PC出貨量，全年業績展望面臨下修壓力。此消息與AI伺服器記憶體需求暴增互為呼應，HBM缺貨與DRAM漲價形成雙重壓力。
+          Anthropic宣布與SpaceX旗下Colossus超算中心達成大規模算力採購協議，以取得訓練Claude下一代模型所需的GPU算力。此舉標誌AI競賽從純軟體能力延伸至算力基礎設施爭奪，也讓馬斯克與Anthropic的關係更加微妙複雜。
         </div>
         <div class="card-footer">
-          <span class="badge register">The Register</span>
-          <a class="read-more" href="https://www.theregister.com/personal-tech/2026/05/06/amd-warns-rising-memory-costs-will-hit-pc-shipments/5231063" target="_blank" rel="noopener">閱讀全文 →</a>
+          <span class="badge wired">Wired</span>
+          <a class="read-more" href="https://www.wired.com/story/anthropic-spacex-compute-deal-colossus/" target="_blank" rel="noopener">閱讀全文 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── 記憶體 / AI晶片 ── -->
+  <!-- ── AI晶片生態 ── -->
   <section class="section">
-    <div class="section-header blue">💾 &nbsp;記憶體 / AI晶片</div>
+    <div class="section-header blue">💾 &nbsp;AI晶片生態</div>
     <div class="cards">
 
       <div class="card blue-top">
@@ -229,11 +229,26 @@
           </a>
         </div>
         <div class="card-body">
-          IEEE Spectrum深度報告揭露，雲端GPU租用市場存在嚴重效能差異——同一型號GPU在不同供應商或甚至同一供應商不同時段，實際運算效能可差達3倍，AI新創公司算力成本估算因此大幅失準。
+          IEEE Spectrum深度報告揭露，雲端GPU租用市場存在嚴重效能差異——同一型號GPU在不同供應商或不同時段，實際運算效能可差達3倍，AI新創公司算力成本估算因此大幅失準，呼籲業界建立效能基準透明標準。
         </div>
         <div class="card-footer">
           <span class="badge ieee">IEEE Spectrum</span>
           <a class="read-more" href="https://spectrum.ieee.org/gpu-performance-comparison" target="_blank" rel="noopener">閱讀全文 →</a>
+        </div>
+      </div>
+
+      <div class="card blue-top">
+        <div class="card-title">
+          <a href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank" rel="noopener">
+            FPGA晶片正式列入IEEE歷史里程碑：可重寫硬體改變半導體50年
+          </a>
+        </div>
+        <div class="card-body">
+          IEEE授予FPGA晶片技術里程碑獎章，紀念可重寫硬體架構問世近50週年。從最初的通訊加速到現今AI推理加速器，FPGA已成為彈性算力的代名詞，Altera（Intel旗下）、Xilinx（AMD旗下）及Lattice等廠商持續推動技術進化。
+        </div>
+        <div class="card-footer">
+          <span class="badge ieee">IEEE Spectrum</span>
+          <a class="read-more" href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank" rel="noopener">閱讀全文 →</a>
         </div>
       </div>
 
@@ -244,7 +259,7 @@
           </a>
         </div>
         <div class="card-body">
-          IEEE Spectrum報導，新型稀疏化運算硬體架構能跳過神經網路中大量接近零的數值，在不損失精度的前提下大幅減少實際計算量，有望使下一代AI推理晶片效能提升2倍、功耗減少50%。
+          IEEE Spectrum報導，新型稀疏化運算硬體架構能跳過神經網路中大量接近零的數值，在不損失精度前提下大幅減少計算量，有望使下一代AI推理晶片效能提升2倍、功耗減少50%，對邊緣AI部署意義重大。
         </div>
         <div class="card-footer">
           <span class="badge ieee">IEEE Spectrum</span>
@@ -255,106 +270,38 @@
     </div>
   </section>
 
-  <!-- ── 地緣博弈 ── -->
+  <!-- ── 科技前沿 ── -->
   <section class="section">
-    <div class="section-header brown">🌏 &nbsp;地緣博弈</div>
+    <div class="section-header brown">🌐 &nbsp;科技前沿</div>
     <div class="cards">
 
       <div class="card brown-top">
         <div class="card-title">
-          <a href="https://www.semiconductor-digest.com/sharp-increase-in-global-semiconductor-sales-in-q1-2026/" target="_blank" rel="noopener">
-            2026 Q1全球半導體銷售急速成長，AI需求推升市場創新高
+          <a href="https://www.wired.com/story/using-ai-negative-impact-thinking-problem-solving-study/" target="_blank" rel="noopener">
+            研究：使用AI僅10分鐘即可令思維惰化，問題解決能力顯著下降
           </a>
         </div>
         <div class="card-body">
-          業界數據顯示2026年第一季全球半導體銷售金額大幅成長，AI伺服器晶片、先進記憶體及高效能運算需求持續旺盛，台灣、韓國主要晶圓廠訂單滿載，全年展望樂觀。
+          最新認知科學研究顯示，受試者在使用AI輔助工具僅10分鐘後，獨立問題解決能力即出現顯著下滑，批判性思維與創意聯想也受到抑制。研究者警告過度依賴AI恐形成「認知外包」惡性循環，對教育與職場帶來深遠影響。
         </div>
         <div class="card-footer">
-          <span class="badge semidigest">Semiconductor Digest</span>
-          <a class="read-more" href="https://www.semiconductor-digest.com/sharp-increase-in-global-semiconductor-sales-in-q1-2026/" target="_blank" rel="noopener">閱讀全文 →</a>
+          <span class="badge wired">Wired</span>
+          <a class="read-more" href="https://www.wired.com/story/using-ai-negative-impact-thinking-problem-solving-study/" target="_blank" rel="noopener">閱讀全文 →</a>
         </div>
       </div>
 
       <div class="card brown-top">
         <div class="card-title">
-          <a href="https://www.semiconductor-digest.com/nvidia-and-corning-announce-long-term-partnership-to-strengthen-u-s-manufacturing-for-ai-infrastructure/" target="_blank" rel="noopener">
-            輝達與康寧攜手：光纖網路基礎設施支撐美國AI算力擴張
+          <a href="https://arstechnica.com/security/2026/04/now-even-ransomware-is-using-post-quantum-cryptography/" target="_blank" rel="noopener">
+            史上首見：勒索軟體家族採用量子安全加密，資安防禦面臨升級壓力
           </a>
         </div>
         <div class="card-body">
-          輝達宣布與康寧（Corning）簽署長期戰略合作協議，共同強化美國AI資料中心光纖網路基礎設施。康寧負責供應新一代低損耗光纖，支援輝達NVLink及Infiniband高頻寬互聯，確保美國AI製造供應鏈本土化。
+          資安研究員首度確認一個勒索軟體家族已採用後量子密碼演算法（PQC）加密受害者檔案，傳統解密工具完全失效。此案例標誌網路犯罪者已超前部署量子安全技術，企業資安防護須加速升級以應對新威脅。
         </div>
         <div class="card-footer">
-          <span class="badge semidigest">Semiconductor Digest</span>
-          <a class="read-more" href="https://www.semiconductor-digest.com/nvidia-and-corning-announce-long-term-partnership-to-strengthen-u-s-manufacturing-for-ai-infrastructure/" target="_blank" rel="noopener">閱讀全文 →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── 產業動態 ── -->
-  <section class="section">
-    <div class="section-header gold">🏭 &nbsp;產業動態</div>
-    <div class="cards">
-
-      <div class="card gold-top">
-        <div class="card-title">
-          <a href="https://www.semiconductor-digest.com/siemens-hardware-assisted-verification-validates-arm-agi-cpu-for-scalable-agentic-ai/" target="_blank" rel="noopener">
-            Arm AGI CPU通過西門子硬體驗證，代理AI應用規模部署在望
-          </a>
-        </div>
-        <div class="card-body">
-          西門子EDA完成對Arm最新AGI（人工通用智慧）CPU設計的硬體輔助功能驗證，確認其可支援大規模代理AI工作負載。此次驗證被視為Arm在資料中心CPU市場挑戰x86架構的重要里程碑。
-        </div>
-        <div class="card-footer">
-          <span class="badge semidigest">Semiconductor Digest</span>
-          <a class="read-more" href="https://www.semiconductor-digest.com/siemens-hardware-assisted-verification-validates-arm-agi-cpu-for-scalable-agentic-ai/" target="_blank" rel="noopener">閱讀全文 →</a>
-        </div>
-      </div>
-
-      <div class="card gold-top">
-        <div class="card-title">
-          <a href="https://www.semiconductor-digest.com/applied-materials-broadens-advanced-packaging-portfolio-with-acquisition-of-nexx/" target="_blank" rel="noopener">
-            應用材料收購先進封裝設備商NEXX，強化CoWoS製程布局
-          </a>
-        </div>
-        <div class="card-body">
-          應用材料（Applied Materials）宣布收購NEXX System，一家專注於先進封裝電鍍設備的廠商。此舉將強化應用材料在CoWoS、SoIC等3D封裝製程的設備競爭力，直接受益於台積電與英特爾的封裝擴產計畫。
-        </div>
-        <div class="card-footer">
-          <span class="badge semidigest">Semiconductor Digest</span>
-          <a class="read-more" href="https://www.semiconductor-digest.com/applied-materials-broadens-advanced-packaging-portfolio-with-acquisition-of-nexx/" target="_blank" rel="noopener">閱讀全文 →</a>
-        </div>
-      </div>
-
-      <div class="card gold-top">
-        <div class="card-title">
-          <a href="https://www.semiconductor-digest.com/globalfoundries-accelerates-adoption-of-co-packaged-optics-for-advanced-ai-data-centers-with-scale-optical-module-solution/" target="_blank" rel="noopener">
-            GlobalFoundries推SCALE共封裝光學模組，搶進AI資料中心互聯市場
-          </a>
-        </div>
-        <div class="card-body">
-          GlobalFoundries（格芯）發表SCALE共封裝光學（CPO）模組解決方案，整合矽光子技術於AI資料中心交換器，可大幅降低高速互聯能耗。此舉標誌格芯正積極從傳統特殊製程轉型，搶攻AI基礎設施市場。
-        </div>
-        <div class="card-footer">
-          <span class="badge semidigest">Semiconductor Digest</span>
-          <a class="read-more" href="https://www.semiconductor-digest.com/globalfoundries-accelerates-adoption-of-co-packaged-optics-for-advanced-ai-data-centers-with-scale-optical-module-solution/" target="_blank" rel="noopener">閱讀全文 →</a>
-        </div>
-      </div>
-
-      <div class="card gold-top">
-        <div class="card-title">
-          <a href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank" rel="noopener">
-            FPGA晶片獲IEEE里程碑認證：可重寫硬體革命50週年紀念
-          </a>
-        </div>
-        <div class="card-body">
-          IEEE授予FPGA晶片技術里程碑獎章，紀念可重寫硬體架構問世近50週年。FPGA技術如今已廣泛應用於AI加速、5G通訊及自動駕駛，Altera（英特爾旗下）、Xilinx（AMD旗下）及Lattice等廠商持續推動技術進化。
-        </div>
-        <div class="card-footer">
-          <span class="badge ieee">IEEE Spectrum</span>
-          <a class="read-more" href="https://spectrum.ieee.org/fpga-chip-ieee-milestone" target="_blank" rel="noopener">閱讀全文 →</a>
+          <span class="badge ars">Ars Technica</span>
+          <a class="read-more" href="https://arstechnica.com/security/2026/04/now-even-ransomware-is-using-post-quantum-cryptography/" target="_blank" rel="noopener">閱讀全文 →</a>
         </div>
       </div>
 
@@ -364,7 +311,7 @@
 </main>
 
 <footer>
-  🤖 晶片日報 · 半導體與AI晶片情報 · 由 OpenClaw 自動生成 · 2026-05-06
+  🤖 晶片日報 · 半導體與AI晶片情報 · 由 OpenClaw 自動生成 · 2026-05-09
 </footer>
 
 </body>
